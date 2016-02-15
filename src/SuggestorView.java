@@ -23,7 +23,7 @@ import javax.swing.event.DocumentListener;
  * Created by NickDesktop on 1/19/2016.
  */
 public class SuggestorView extends JTextField{
-    public SuggestorView(JFrame frame, JPanel p) {
+    public SuggestorView(JFrame frame, JPanel p, ISuggestor theModel) {
 
         //JFrame frame = new JFrame();
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,7 +31,7 @@ public class SuggestorView extends JTextField{
 
         JTextField f = new JTextField(25);
 
-        AutoSuggestor autoSuggestor = new AutoSuggestor(f, frame, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f) {
+        AutoSuggestor autoSuggestor = new AutoSuggestor(f, frame, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f, theModel) {
             //@Override
 //            boolean wordTyped(String typedWord) {
 //
@@ -78,6 +78,7 @@ class AutoSuggestor {
     private String typedWord;
     private final ArrayList<String> dictionary = new ArrayList<>();
     private int currentIndexOfSpace, tW, tH;
+    //private ISuggestor theModel;
     private DocumentListener documentListener = new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent de) {
@@ -102,12 +103,13 @@ class AutoSuggestor {
     WordModel theModel = new WordModel();
 
     //view
-    public AutoSuggestor(JTextField textField, Window mainWindow, ArrayList<String> words, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity) {
+    public AutoSuggestor(JTextField textField, Window mainWindow, ArrayList<String> words, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity, ISuggestor modelIn) {
         this.textField = textField;
         this.suggestionsTextColor = textColor;
         this.container = mainWindow;
         this.suggestionFocusedColor = suggestionFocusedColor;
         this.textField.getDocument().addDocumentListener(documentListener);
+        //this.theModel = modelIn;
 
         setDictionary(words);
 

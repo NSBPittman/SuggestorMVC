@@ -19,13 +19,14 @@ public class AutoSuggestorMVC {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel p = new JPanel();
 
-        SuggestorView sView = new SuggestorView(frame, p);
-
         TFIDFmodel sModel = new TFIDFmodel();
 
         //WordModel sModel = new WordModel();
 
-        SuggestorController sController = new SuggestorController(sView, sModel);
+        SuggestorView sView = new SuggestorView(frame, p, sModel);
+
+
+
     }
 
 
