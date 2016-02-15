@@ -24,7 +24,7 @@ public class TFIDFmodel implements ISuggestor {
      */
     public double tf(String doc, String term) {
         double result = 0;
-        double length = (Math.random() * .00000000000000000000000000000001);//maybe create function to generate this number so it can be not random for testing or random if it needs tp be
+        double length = (Math.random() * .0000000000000001);//maybe create function to generate this number so it can be not random for testing or random if it needs tp be
 
         String[] splitStr = term.split("\\s+");
         for (String newTerm : splitStr) {
@@ -74,32 +74,6 @@ public class TFIDFmodel implements ISuggestor {
         return Math.abs(Math.log((docs.size() / n)));
         //return Math.log(docs.size() / n);
     }
-
-    public double idf2(List<String> docs, String term) {
-        double n = 0;
-        String[] splitTerm = term.split("\\s+");
-        for (String doc : docs) {
-            String[] splitDoc = doc.split("\\s+");
-            List<String> wordsFound;
-            for (String newTerm : splitTerm) {
-                for (String word : splitDoc) {
-                    //System.out.println("Word: " + word + "in Doc: " + doc);
-                    if (newTerm.equalsIgnoreCase(word)) {
-                        n++;
-                        //System.out.println("TERMS: " + n);
-                        break;//todo rewrite code to not use break
-                        //break exists so that n is count of how many document term appears in not how many times it appears in all docs
-                    }
-                }
-            }
-        }
-        //System.out.println("doc size: " + docs.size() + " | n: :" + n + " | idf: " + docs.size() / n);
-        n = n + (Math.random() * .00000000000000000000000000000001);
-        return Math.abs(Math.log((docs.size() / n)));
-        //return Math.log(docs.size() / n);
-    }
-
-
 
 
     /**
