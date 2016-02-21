@@ -32,28 +32,6 @@ public class SuggestorView extends JTextField{
         JTextField f = new JTextField(25);
 
         AutoSuggestor autoSuggestor = new AutoSuggestor(f, frame, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f, theModel) {
-            //@Override
-//            boolean wordTyped(String typedWord) {
-//
-//                //create list for dictionary this in your case might be done via calling a method which queries db and returns results as arraylist
-//                ArrayList<String> words = new ArrayList<>();
-//                words.add("Patient");
-//                words.add("has");
-//                words.add("sclerosis");
-//                words.add("hyperthyroid");
-//                words.add("vitiligo");
-//                words.add("scleritis");
-//                words.add("leukemia");
-//                words.add("dead");
-//                words.add("world");
-//                words.add("hello");
-//
-//
-//                setDictionary(words);
-//                //addToDictionary("bye");//adds a single word
-//
-//                return super.wordTyped(typedWord);//now call super to check for any matches against newest dictionary
-//            }
         };
 
         //JPanel p = new JPanel();
@@ -65,10 +43,8 @@ public class SuggestorView extends JTextField{
         frame.pack();
         frame.setVisible(true);
     }
-
-    //view
-
 }
+
 class AutoSuggestor {
 
     private final JTextField textField;
@@ -97,10 +73,6 @@ class AutoSuggestor {
     };
     private final Color suggestionsTextColor;
     private final Color suggestionFocusedColor;
-
-    //HERE
-    //TFIDFmodel theModel = new TFIDFmodel();
-    //WordModel theModel = new WordModel();
 
     //view
     public AutoSuggestor(JTextField textField, Window mainWindow, ArrayList<String> words, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity, ISuggestor modelIn) {
@@ -241,7 +213,7 @@ class AutoSuggestor {
     //view
     protected void addWordToSuggestions(String word) {
         //IMPORTANT
-        SuggestionLabel suggestionLabel = new SuggestionLabel(word, suggestionFocusedColor, suggestionsTextColor, this);
+        SuggestionLabel suggestionLabel = new SuggestionLabel(word, suggestionFocusedColor, suggestionsTextColor, this, theModel);
 
         calculatePopUpWindowSize(suggestionLabel);
 
@@ -250,23 +222,8 @@ class AutoSuggestor {
         suggestionsPanel.add(suggestionLabel);
     }
 
-    //view
     public String getCurrentlyTypedWord() {//get newest word after last white spaceif any or the first word if no white spaces
-        String text = textField.getText();
-        String wordBeingTyped = "";
-        if (text.contains(" ")) {
-            int tmp = text.lastIndexOf(" ");
-            if (tmp >= currentIndexOfSpace) {
-                currentIndexOfSpace = tmp;
-                wordBeingTyped = text.substring(text.lastIndexOf(" "));
-            }
-        } else {
-            wordBeingTyped = text;
-        }
-
-        //Change to switch between TFIDF and Word Models
-        //return wordBeingTyped.trim();
-        return text;
+        return textField.getText();
     }
 
 
@@ -335,25 +292,6 @@ class AutoSuggestor {
         //System.out.println("Typed word: " + typedWord);
 
         boolean suggestionAdded = false;
-//FOR WORD  Model
-//        for (String word : dictionary) {//get words in the dictionary which we added
-//            boolean fullymatches = true;
-//            if (typedWord.length() > 2) { //requires that 3 characters be typed
-//                for (int i = 0; i < typedWord.length(); i++) {//each string in the word
-//                    if (!typedWord.toLowerCase().startsWith(String.valueOf(word.toLowerCase().charAt(i)), i)) {//check for match
-//                        fullymatches = false;
-//                        break;
-//                    }
-//                }
-//                if (fullymatches) {
-//                    addWordToSuggestions(word);
-//                    suggestionAdded = true;
-//                }
-//            }
-//        }
-
-        //FOR ENTIRE HYP controller
-        //CONTROLLER SOOON
 
         ArrayList<String> res = theModel.calculateBestMatches(typedWord, 5);
         //System.out.println("In wordTyped: typedWord = " + typedWord);
@@ -365,89 +303,3 @@ class AutoSuggestor {
         return suggestionAdded;
     }
 }
-
-//class SuggestionLabel extends JLabel {
-//
-//    private boolean focused = false;
-//    private final JWindow autoSuggestionsPopUpWindow;
-//    private final JTextField textField;
-//    private final AutoSuggestor autoSuggestor;
-//    private Color suggestionsTextColor, suggestionBorderColor;
-//
-//    //HERE
-//    //TFIDFmodel theModel = new TFIDFmodel();
-//    WordModel theModel = new WordModel();
-//
-//
-//    //view
-//    public SuggestionLabel(String string, final Color borderColor, Color suggestionsTextColor, AutoSuggestor autoSuggestor) {
-//        super(string);
-//
-//        this.suggestionsTextColor = suggestionsTextColor;
-//        this.autoSuggestor = autoSuggestor;
-//        this.textField = autoSuggestor.getTextField();
-//        this.suggestionBorderColor = borderColor;
-//        this.autoSuggestionsPopUpWindow = autoSuggestor.getAutoSuggestionPopUpWindow();
-//
-//        initComponent();
-//    }
-//
-//    private void initComponent() {
-//        setFocusable(true);
-//        setForeground(suggestionsTextColor);
-//
-//        addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent me) {
-//                super.mouseClicked(me);
-//
-//                replaceWithSuggestedText();
-//
-//                autoSuggestionsPopUpWindow.setVisible(false);
-//            }
-//        });
-//
-//        getInputMap(JComponent.WHEN_FOCUSED).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0, true), "Enter released");
-//        getActionMap().put("Enter released", new AbstractAction() {
-//            @Override
-//            public void actionPerformed(ActionEvent ae) {
-//                replaceWithSuggestedText();
-//                autoSuggestionsPopUpWindow.setVisible(false);
-//            }
-//        });
-//    }
-//
-//    public void setFocused(boolean focused) {
-//        if (focused) {
-//            setBorder(new LineBorder(suggestionBorderColor));
-//        } else {
-//            setBorder(null);
-//        }
-//        repaint();
-//        this.focused = focused;
-//    }
-//
-//    public boolean isFocused() {
-//        return focused;
-//    }
-//
-//    //view
-//    private void replaceWithSuggestedText() {
-//
-//        //Word Suggester
-//        String suggestedWord = getText();
-//        String text = textField.getText();
-//        String typedWord = autoSuggestor.getCurrentlyTypedWord();//word model bug culprit
-//        String t = text.substring(0, text.lastIndexOf(typedWord));
-//        //String tmp = t + text.substring(text.lastIndexOf(typedWord)).replace(typedWord, suggestedWord);
-//        //String tmp = suggestedWord;
-//
-//        String tmp = theModel.getSuggested(suggestedWord, text, typedWord, t);
-//        textField.setText(tmp + " ");
-//        System.out.println("In replaceWithSuggestedText\n suggestedWord = " + suggestedWord + "\n text = " + text + "\n typedWord = " + typedWord + "\n t = " + t + "\n tmp = " + tmp);
-//
-//        //Hyp Suggester
-////        String hyp = textField.getText();
-////        String
-//    }
-//}
