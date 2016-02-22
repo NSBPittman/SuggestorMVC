@@ -23,7 +23,7 @@ import javax.swing.event.DocumentListener;
  * Created by Nick Pittman on 1/19/2016.
  * View for AutoSuggestor
  */
-public class AutoSuggestorView {
+public class AutoSuggesterView {
 
     private final JTextField textField;
     private final Window container;
@@ -32,7 +32,7 @@ public class AutoSuggestorView {
     private String typedWord;
     private final ArrayList<String> dictionary = new ArrayList<>();
     private int currentIndexOfSpace, tW, tH;
-    private ISuggestor theModel;
+    private ISuggester theModel;
     private DocumentListener documentListener = new DocumentListener() {
         @Override
         public void insertUpdate(DocumentEvent de) {
@@ -62,7 +62,7 @@ public class AutoSuggestorView {
      * @param opacity opacity of suggestionPanel
      * @param modelIn model to be used to get suggestions
      */
-    public AutoSuggestorView(JTextField textField, Window mainWindow, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity, ISuggestor modelIn) {
+    public AutoSuggesterView(JTextField textField, Window mainWindow, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity, ISuggester modelIn) {
         this.textField = textField;
         this.suggestionsTextColor = textColor;
         this.container = mainWindow;

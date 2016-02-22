@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Created by Nick Pittman on 1/21/2016.
  * Suggests word from sent in dictionary based on what is partially finished word is sent in
  */
-public class WordModelAndController implements ISuggestor {
+public class WordModelAndController implements ISuggester {
     private int currentIndexOfSpace;
     private final ArrayList<String> dictionary = new ArrayList<>();
     private int numCharacters;

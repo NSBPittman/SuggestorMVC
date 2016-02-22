@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by Nick Pittman on 1/21/2016.
  */
-public interface ISuggestor {
+public interface ISuggester {
     /**
      * Calculates the closest word or sentence based on user's input
      * @param line string represents what is being sent in to check against dictionaries

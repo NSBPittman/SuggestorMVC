@@ -24,9 +24,9 @@ public class ExampleClass {
         int numCharacters = 3;
 
         TFIDFModelAndController theModel = new TFIDFModelAndController(EKBLocation, minReq);
-        //WordModelAndController theModel = new WordModelAndController(dictinaryLocation);
+        //WordModelAndController theModel = new WordModelAndController(dictinaryLocation, numCharacters);
 
-        AutoSuggestorMVC.createAutoSuggestor(frame, p, theModel);
+        AutoSuggestorCreator.createAutoSuggestor(frame, p, theModel);
 
     }
 }

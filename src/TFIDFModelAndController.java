@@ -22,7 +22,7 @@ import com.aliasi.tokenizer.TokenizerFactory;
  * tempDocs a String array used to read in csv file
  * minReq a required score for phrase to have to be considered "good enough" to be returned
  */
-public class TFIDFModelAndController implements ISuggestor {
+public class TFIDFModelAndController implements ISuggester {
     private String EKBLocation;
     private List<String> documents;
     private List<String> stemDocs;
@@ -269,6 +269,14 @@ public class TFIDFModelAndController implements ISuggestor {
     }
 
 
+    /**
+     * Creates ArrayList of the passed in documents that meet minReq
+     * @param documents List of stemmed hypotheses/phrases score against hypothesis
+     * @param hypothesis String that the suggester
+     * @param ekbHyps List of hypotheses/phrases sent in to build sortedHyps with
+     * @param numMatches number of matches to return
+     * @return ArrayList<String> of the documents from ekbHyps that exceed minReq
+     */
     private  ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches){
         double[] scoreArr;
         scoreArr = new double[documents.size()];
