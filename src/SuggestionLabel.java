@@ -88,7 +88,7 @@ public class SuggestionLabel extends JLabel{
 
             String tmp = theModel.getSuggested(suggestedWord, text, typedWord, t);
             textField.setText(tmp + " ");
-            System.out.println("In replaceWithSuggestedText\n suggestedWord = " + suggestedWord + "\n text = " + text + "\n typedWord = " + typedWord + "\n t = " + t + "\n tmp = " + tmp);
+            //System.out.println("In replaceWithSuggestedText\n suggestedWord = " + suggestedWord + "\n text = " + text + "\n typedWord = " + typedWord + "\n t = " + t + "\n tmp = " + tmp);
 
             //Hyp Suggester
 //        String hyp = textField.getText();

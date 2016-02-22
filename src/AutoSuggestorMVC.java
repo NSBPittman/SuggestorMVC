@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by NickDesktop on 1/21/2016.
@@ -6,18 +7,18 @@ import javax.swing.*;
 //make window here and make autosuggestor extend textbox so that it
 public class AutoSuggestorMVC {
 
-    public static void main(String[] args) {
+    public static void createAutoSuggestor(JFrame frame, JPanel p, ISuggestor theModel) {
+        JTextField f = new JTextField(25);
 
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel p = new JPanel();
+        AutoSuggestor autoSuggestor = new AutoSuggestor(f, frame, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f, theModel) {
+        };
 
-        TFIDFmodel sModel = new TFIDFmodel();
+        p.add(f);
 
-        //WordModel sModel = new WordModel();
+        frame.add(p);
 
-        SuggestorView sView = new SuggestorView(frame, p, sModel);
-
+        frame.pack();
+        frame.setVisible(true);
 
 
     }

@@ -1,9 +1,11 @@
 /**
  * Created by NickDesktop on 1/19/2016.
  */
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import com.aliasi.tokenizer.EnglishStopTokenizerFactory;
 import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
@@ -16,7 +18,60 @@ import com.aliasi.tokenizer.TokenizerFactory;
  * Created by NickDesktop on 11/16/2015.
  */
 //model
-public class TFIDFmodel implements ISuggestor {
+public class TFIDFModelAndController implements ISuggestor {
+    private String EKBLocation;
+    private List<String> documents;
+    private List<String> stemDocs;
+    private String[] tempDocs;
+    String[] entries;
+
+    public TFIDFModelAndController(String EKBLocation) {
+        this.EKBLocation = EKBLocation;
+
+//        String doc1 = "Patient has Hyperthyroid";
+//        String doc2 = "Patient has Leukemia";
+//        String doc3 = "Patient has Scleritis";
+//        String doc4 = "Patient has Vitiligo";
+//        String doc5 = "Patient has Sclerosis";
+//        String doc6 = "Patient has Crohn's disease";
+//        String doc7 = "The patient has contracted sclerosis";
+        //String[] tempDocs;
+
+
+        try {
+            BufferedReader ugh = new BufferedReader(new FileReader(new File(EKBLocation)));
+            BufferedReader br = new BufferedReader(new FileReader(new File(EKBLocation)));
+            String line;
+            int len = 0;
+            while ((line = ugh.readLine()) != null) {
+                len++;
+
+            }
+            int i = 0;
+            tempDocs = new String[len];
+            while ((line = br.readLine()) != null) {
+                //System.out.println(i + " " + len + " " + line);
+                tempDocs[i] = line;
+                i++;
+            }
+        }
+        catch(FileNotFoundException exception)
+        {
+            System.out.println("The file " + EKBLocation + " was not found.");
+        }
+        catch(IOException exception)
+        {
+            System.out.println(exception);
+        }
+
+        documents = Arrays.asList(tempDocs);
+
+        stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
+
+
+    }
+
+
     /**
      * @param doc  list of strings
      * @param term String represents a term
@@ -127,38 +182,24 @@ public class TFIDFmodel implements ISuggestor {
         for (String value : arrList) {
             nString = nString + " " + value;
         }
-        //System.out.print("\nString: " + nString);
         nString = nString.substring(1);
-        //System.out.print("\nnString:" + nString);
-
         return nString;
     }
 
     private static ArrayList<String> makeStemmedDocuments(List<String> documents) {
-        //String stemDocs = "";
         ArrayList<String> sDocs = new ArrayList<String>();
         for (String cDoc : documents){
             ArrayList<String> tDoc = tokenize(cDoc);
             ArrayList<String> sDoc = stemming(tDoc);
             String stemDoc = stringBuilder(sDoc);
             sDocs.add(stemDoc);
-            //stemDocs = stemDocs + "," + stemDoc;
-        }//todo maybe think about adding stemDocs to arrayList rather than making a string than converting it...
-        //System.out.print("stemDocs: " + stemDocs);
-        //ArrayList<String> sDList = new ArrayList<String>(Arrays.asList(stemDocs.split(",")));
-        //System.out.print("\nsDList: " + sDList);
-        //String haha = stringBuilder(sDList);
-        //System.out.print("\nHAHA: " + haha);
-
-        //sDList.remove(0);
-        //System.out.println("IN makeStemmedDocuments: " + sDocs);
-
+        }
         return sDocs;
     }
 
-    private static Double docScore(List<String> documents, String cDoc, String hypothesis){
+    private Double docScore(List<String> documents, String cDoc, String hypothesis){
         Double score = 0.0;
-        TFIDFmodel calculator = new TFIDFmodel();
+        TFIDFModelAndController calculator = new TFIDFModelAndController(EKBLocation);
 
         ArrayList<String> hyp = tokenize(hypothesis);
         hyp = stemming(hyp);
@@ -166,85 +207,6 @@ public class TFIDFmodel implements ISuggestor {
             score += calculator.tfIdf(cDoc, documents, cHyp);
         }
         return score;
-    }
-
-    private static String bestMatch(List<String> documents, String hypothesis, List<String> ekbHyps){
-        String topRes = "NAH";        double[] scoreArr;
-        scoreArr = new double[documents.size()];
-        //ArrayList docScore = new ArrayList();
-        Double cDocScore = 0.0;
-        System.out.println("\n--------------------------\nIN BEST MATCH\n--------------------------");
-        int iter = 0;
-        for (String cDoc : documents){
-            cDocScore = docScore(documents, cDoc, hypothesis);
-            scoreArr[iter] = cDocScore;
-            iter++;
-            //docScore.add(cDocScore);
-            System.out.println(cDoc + ": " + cDocScore);
-        }
-
-        double maxScore = 0.0;
-        for (double score : scoreArr){
-            //System.out.print("Score: " + score + "\n");
-            if (score>maxScore){
-                maxScore = score;
-            }
-        }
-        System.out.println("\nMaximum Score for Top Match: " + maxScore);
-
-        //Get string for doc with best score
-        //todo take best score and find associated doc strings
-        int maxIndex = -1;
-        for (int i = 0; i < scoreArr.length; i++){
-            if (scoreArr[i] == maxScore){
-                maxIndex = i;
-            }
-        }
-        topRes = ekbHyps.get(maxIndex);
-        System.out.println("\nBest EKB hypothesis: " + topRes);
-
-        return topRes;
-    }
-
-    private static ArrayList<String> bestMatches(List<String> documents, String hypothesis, List<String> ekbHyps){
-        //have param for length of list to return, and other const in notes on google drive.
-        ArrayList<String> topRes = new ArrayList<String>();
-        double[] scoreArr;
-        scoreArr = new double[documents.size()];
-        //ArrayList docScore = new ArrayList();
-        Double cDocScore = 0.0;
-        System.out.println("\n--------------------------\nIN BEST MATCH\n--------------------------");
-        int iter = 0;
-        for (String cDoc : documents){
-            cDocScore = docScore(documents, cDoc, hypothesis);
-            scoreArr[iter] = cDocScore;
-            iter++;
-            //docScore.add(cDocScore);
-            System.out.println(cDoc + ": " + cDocScore);
-        }
-
-        double maxScore = 0.0;
-        for (double score : scoreArr){
-            //System.out.print("Score: " + score + "\n");
-            if (score>maxScore){
-                maxScore = score;
-            }
-        }
-        System.out.println("\nMaximum Score for Top Match: " + maxScore);
-
-        //Get string for doc with best score
-        //todo take best score and find associated doc strings
-        //int maxIndex = -1;
-        for (int i = 0; i < scoreArr.length; i++){
-            if (scoreArr[i] > maxScore-.2){
-                //maxIndex = i;
-                topRes.add(ekbHyps.get(i));
-            }
-        }
-        //topRes = ekbHyps.get(maxIndex);
-        System.out.println("\nBest EKB hypothesis: " + topRes);
-
-        return topRes;
     }
 
     //oh lord the side effects
@@ -271,10 +233,9 @@ public class TFIDFmodel implements ISuggestor {
         for (int i = 0; i < retLen; i++)
             topArr[i] = -20.20;
 
-        double minReq = .5;//TO BE MADE GLOBAL
+        double minReq = .6;//TO BE MADE GLOBAL//todo make this another config
         Arrays.sort(scoreArr);
         reverse(scoreArr);
-        //need iterator that only get's iterated if score matches req
         int ifI = 0;
         for (int i = 0; i < retLen; i++){
             if (scoreArr[i] >= minReq){
@@ -282,9 +243,6 @@ public class TFIDFmodel implements ISuggestor {
                 ifI++;
             }
         }
-//        for (double score : topArr)
-//            System.out.println("in getTopScores: " + score);
-
         return topArr;
     }
 
@@ -297,27 +255,18 @@ public class TFIDFmodel implements ISuggestor {
         return contains;
     }
 
-    private static ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches){
-        //have param for length of list to return, and other const in notes on google drive.
-        ArrayList<String> topRes = new ArrayList<String>();
+    private  ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches){
         double[] scoreArr;
         scoreArr = new double[documents.size()];
-        //ArrayList docScore = new ArrayList();
         double cDocScore;
-        System.out.println("\n--------------------------\nIN BEST MATCH\n--------------------------");
         int iter = 0;
         for (String cDoc : documents){
             cDocScore = docScore(documents, cDoc, hypothesis);
             scoreArr[iter] = cDocScore;
             iter++;
-            //docScore.add(cDocScore);
-            System.out.println(cDoc + ": " + cDocScore);
         }
 
         ArrayList<String> sortedHyps = new ArrayList<>();
-        double[] sortedScores = new double[documents.size()];
-        double maxScore = sortedScores[0];
-        System.out.println("\nMaximum Score for Top Match: " + maxScore);
         double[] scoreArrOG = new double[scoreArr.length];
         for (int i = 0; i < scoreArr.length; i++)
             scoreArrOG[i] = scoreArr[i];
@@ -329,44 +278,12 @@ public class TFIDFmodel implements ISuggestor {
                 sortedHyps.add(ekbHyps.get(i));
             }
         }
-
-        //topRes = ekbHyps.get(maxIndex);
-        System.out.println("\nBest EKB hypothesis: " + sortedHyps);
-
+        //System.out.println("\nBest EKB hypothesis: " + sortedHyps);
         return sortedHyps;
     }
 
-//    public static String returnBestMatch(String userHyp){
-//        String doc1 = "Patient has Hyperthyroid";
-//        String doc2 = "Patient has Leukemia";
-//        String doc3 = "Patient has Scleritis";
-//        String doc4 = "Patient has Vitiligo";
-//        String doc5 = "Patient has Sclerosis";
-//        String doc6 = "Patient has Crohn's disease";
-//        //ASSEMBLE LIST OF DOCUMENTS
-//        List<String> documents = Arrays.asList(doc1, doc2, doc3, doc4, doc5, doc6);
-//        //TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
-//        List<String> stemDocs = makeStemmedDocuments(documents);
-//        //Round2 calculator = new Round2();
-//        String best = bestMatch(stemDocs, userHyp, documents);
-//
-//        return best;
-//    }
 
     public ArrayList<String> calculateBestMatches(String userHyp, int numMatches){//be more consistent in naming things
-        String doc1 = "Patient has Hyperthyroid";
-        String doc2 = "Patient has Leukemia";
-        String doc3 = "Patient has Scleritis";
-        String doc4 = "Patient has Vitiligo";
-        String doc5 = "Patient has Sclerosis";
-        String doc6 = "Patient has Crohn's disease";
-        String doc7 = "The patient has contracted sclerosis";
-        //ASSEMBLE LIST OF DOCUMENTS
-        List<String> documents = Arrays.asList(doc1, doc2, doc3, doc4, doc5, doc6, doc7);
-        //TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
-        List<String> stemDocs = makeStemmedDocuments(documents);
-        //Round2 calculator = new Round2()
-
         ArrayList<String> best;
         best = getBestMatches(stemDocs, userHyp, documents, numMatches);
         return best;

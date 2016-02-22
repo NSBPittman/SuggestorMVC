@@ -1,28 +1,41 @@
+import java.io.*;
 import java.util.ArrayList;
 
 /**
  * Created by NickDesktop on 1/21/2016.
  */
-public class WordModel implements ISuggestor {
+public class WordModelAndController implements ISuggestor {
     private int currentIndexOfSpace;
     private final ArrayList<String> dictionary = new ArrayList<>();
 
-    public ArrayList<String> calculateBestMatches(String userHyp, int numMatches){//be more consistent in naming things
-        ArrayList<String> words = new ArrayList<>();
-        words.add("Patient");
-        words.add("has");
-        words.add("sclerosis");
-        words.add("hyperthyroid");
-        words.add("vitiligo");
-        words.add("scleritis");
-        words.add("leukemia");
-        words.add("dead");
-        words.add("world");
-        words.add("hello");
 
-        for (String word : words) {
-            dictionary.add(word);
+    public WordModelAndController(String dictionaryLocation) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(new File(dictionaryLocation)));
+            String line;
+            while ((line = br.readLine()) != null) {
+
+                String[] entries = line.split(",");
+
+                for (String word : entries) {
+                    dictionary.add(word);
+                }
+
+            }
+
         }
+
+        catch(FileNotFoundException exception)
+        {
+            System.out.println("The file " + dictionaryLocation + " was not found.");
+        }
+        catch(IOException exception)
+        {
+            System.out.println(exception);
+        }
+    }
+
+    public ArrayList<String> calculateBestMatches(String userHyp, int numMatches){//be more consistent in naming things
 
         ArrayList<String> match = new ArrayList<>();
         String currentlyTypedWord = getCurrentlyTypedWord(userHyp);
@@ -57,7 +70,6 @@ public class WordModel implements ISuggestor {
     }
 
     private String getCurrentlyTypedWord(String userHyp){
-        //String text = textField.getText();
         String wordBeingTyped = "";
         if (userHyp.contains(" ")) {
             int tmp = userHyp.lastIndexOf(" ");
@@ -76,7 +88,6 @@ public class WordModel implements ISuggestor {
         String currentlyTypedWord = getCurrentlyTypedWord(userHyp);
         int previousLength = userHyp.length() - currentlyTypedWord.length();
         String previouslyTyped = userHyp.substring(0, previousLength);
-        System.out.println("previouslyTyped: " + previouslyTyped);
         return previouslyTyped;
     }
 

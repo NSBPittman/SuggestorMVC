@@ -22,30 +22,7 @@ import javax.swing.event.DocumentListener;
 /**
  * Created by NickDesktop on 1/19/2016.
  */
-public class SuggestorView extends JTextField{
-    public SuggestorView(JFrame frame, JPanel p, ISuggestor theModel) {
-
-        //JFrame frame = new JFrame();
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
-        JTextField f = new JTextField(25);
-
-        AutoSuggestor autoSuggestor = new AutoSuggestor(f, frame, null, Color.WHITE.brighter(), Color.BLUE, Color.RED, 0.75f, theModel) {
-        };
-
-        //JPanel p = new JPanel();
-
-        p.add(f);
-
-        frame.add(p);
-
-        frame.pack();
-        frame.setVisible(true);
-    }
-}
-
-class AutoSuggestor {
+public class AutoSuggestor {
 
     private final JTextField textField;
     private final Window container;
@@ -165,14 +142,12 @@ class AutoSuggestor {
         });
     }
 
-    //view
     private void setFocusToTextField() {
         container.toFront();
         container.requestFocusInWindow();
         textField.requestFocusInWindow();
     }
 
-    //view
     public ArrayList<SuggestionLabel> getAddedSuggestionLabels() {
         ArrayList<SuggestionLabel> sls = new ArrayList<>();
         for (int i = 0; i < suggestionsPanel.getComponentCount(); i++) {
@@ -185,7 +160,6 @@ class AutoSuggestor {
         return sls;
     }
 
-    //view or  maybe
     private void checkForAndShowSuggestions() {
 
         typedWord = getCurrentlyTypedWord();
@@ -294,6 +268,7 @@ class AutoSuggestor {
         boolean suggestionAdded = false;
 
         ArrayList<String> res = theModel.calculateBestMatches(typedWord, 5);
+        //todo make num matches a sent in variable.
         //System.out.println("In wordTyped: typedWord = " + typedWord);
         for (String hyp : res){
             addWordToSuggestions(hyp);
