@@ -20,7 +20,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 /**
- * Created by NickDesktop on 1/19/2016.
+ * Created by Nick Pittman on 1/19/2016.
  */
 public class AutoSuggestor {
 
@@ -263,13 +263,9 @@ public class AutoSuggestor {
         if (typedWord.isEmpty()) {
             return false;
         }
-        //System.out.println("Typed word: " + typedWord);
-
         boolean suggestionAdded = false;
 
         ArrayList<String> res = theModel.calculateBestMatches(typedWord, 5);
-        //todo make num matches a sent in variable.
-        //System.out.println("In wordTyped: typedWord = " + typedWord);
         for (String hyp : res){
             addWordToSuggestions(hyp);
             suggestionAdded = true;

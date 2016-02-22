@@ -2,13 +2,17 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Created by NickDesktop on 1/21/2016.
+ * Created by Nick Pittman on 1/21/2016.
+ * Suggests word from sent in dictionary based on what is partially finished word is sent in
  */
 public class WordModelAndController implements ISuggestor {
     private int currentIndexOfSpace;
     private final ArrayList<String> dictionary = new ArrayList<>();
 
-
+    /**
+     * Creates dictionary for class to check sent in words
+     * @param dictionaryLocation string represents file path of dictionary
+     */
     public WordModelAndController(String dictionaryLocation) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(dictionaryLocation)));
@@ -20,9 +24,7 @@ public class WordModelAndController implements ISuggestor {
                 for (String word : entries) {
                     dictionary.add(word);
                 }
-
             }
-
         }
 
         catch(FileNotFoundException exception)
@@ -35,13 +37,11 @@ public class WordModelAndController implements ISuggestor {
         }
     }
 
-    public ArrayList<String> calculateBestMatches(String userHyp, int numMatches){//be more consistent in naming things
+    public ArrayList<String> calculateBestMatches(String line, int numMatches){//be more consistent in naming things
 
         ArrayList<String> match = new ArrayList<>();
-        String currentlyTypedWord = getCurrentlyTypedWord(userHyp);
-        String alreadyTypedWords = getAlreadyTypedWords(userHyp);
-
-
+        String currentlyTypedWord = getCurrentlyTypedWord(line);
+        String alreadyTypedWords = getAlreadyTypedWords(line);
 
         for (String word : dictionary) {//get words in the dictionary which we added
             boolean fullymatches = true;
@@ -53,8 +53,6 @@ public class WordModelAndController implements ISuggestor {
                     }
                 }
                 if (fullymatches) {
-                    System.out.println("userHyp: " + userHyp + "\nword: " + word + "\ncurrentlyTypedWord:" + currentlyTypedWord);
-
                     match.add(alreadyTypedWords + word);
                     return match;
                 }
@@ -63,32 +61,40 @@ public class WordModelAndController implements ISuggestor {
         return match;
     }
 
-    public String getSuggested(String suggestedWord, String text, String typedWord, String t){
-
-        String newText = t + text.substring(text.lastIndexOf(typedWord)).replace(typedWord, suggestedWord);;
+    public String getSuggested(String suggestedWord, String text){
+        String newText = text.substring(text.lastIndexOf(text)).replace(text, suggestedWord);
         return newText;
     }
 
-    private String getCurrentlyTypedWord(String userHyp){
+    /**
+     * finds the word that is currently being typed, separates it from preceding words
+     * @param line complete line sent in
+     * @return string for word that is currently being typed
+     */
+    private String getCurrentlyTypedWord(String line){
         String wordBeingTyped = "";
-        if (userHyp.contains(" ")) {
-            int tmp = userHyp.lastIndexOf(" ");
+        if (line.contains(" ")) {
+            int tmp = line.lastIndexOf(" ");
             if (tmp >= currentIndexOfSpace) {
                 currentIndexOfSpace = tmp;
-                wordBeingTyped = userHyp.substring(userHyp.lastIndexOf(" "));
+                wordBeingTyped = line.substring(line.lastIndexOf(" "));
             }
         }
         else {
-            wordBeingTyped = userHyp;
+            wordBeingTyped = line;
         }
         return wordBeingTyped.trim();
     }
 
-    private String getAlreadyTypedWords(String userHyp){
-        String currentlyTypedWord = getCurrentlyTypedWord(userHyp);
-        int previousLength = userHyp.length() - currentlyTypedWord.length();
-        String previouslyTyped = userHyp.substring(0, previousLength);
+    /**
+     * finds the text that precedes the word that is currently being typed
+     * @param line complete line sent in
+     * @return string of what was entered prior to current word
+     */
+    private String getAlreadyTypedWords(String line){
+        String currentlyTypedWord = getCurrentlyTypedWord(line);
+        int previousLength = line.length() - currentlyTypedWord.length();
+        String previouslyTyped = line.substring(0, previousLength);
         return previouslyTyped;
     }
-
 }

@@ -2,22 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d795a747-50b0-486d-945f-3a52cc94fd1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ExampleClass.java" />
-      <change type="DELETED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\out\production\SuggestorMVC\SuggestorView$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\out\production\SuggestorMVC\SuggestorView.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\out\production\SuggestorMVC\TFIDFmodel.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\out\production\SuggestorMVC\WordModel.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\src\SuggestorView.java" afterPath="$PROJECT_DIR$/src/AutoSuggestor.java" />
-      <change type="MOVED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\src\TFIDFmodel.java" afterPath="$PROJECT_DIR$/src/TFIDFModelAndController.java" />
-      <change type="MOVED" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\src\WordModel.java" afterPath="$PROJECT_DIR$/src/WordModelAndController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor$1.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor$2.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor$3.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestorMVC.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggestorMVC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/ExampleClass.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/ExampleClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/ISuggestor.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/ISuggestor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$1.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$2.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/TFIDFModelAndController.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/TFIDFModelAndController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/WordModelAndController.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/WordModelAndController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AutoSuggestor.java" afterPath="$PROJECT_DIR$/src/AutoSuggestor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AutoSuggestorMVC.java" afterPath="$PROJECT_DIR$/src/AutoSuggestorMVC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExampleClass.java" afterPath="$PROJECT_DIR$/src/ExampleClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ISuggestor.java" afterPath="$PROJECT_DIR$/src/ISuggestor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SuggestionLabel.java" afterPath="$PROJECT_DIR$/src/SuggestionLabel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TFIDFModelAndController.java" afterPath="$PROJECT_DIR$/src/TFIDFModelAndController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WordModelAndController.java" afterPath="$PROJECT_DIR$/src/WordModelAndController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SuggestorMVC.iws" />
@@ -39,14 +38,14 @@
     <favorites_list name="SuggestorMVC" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4903339">
+    <splitter split-orientation="horizontal" split-proportion="0.49010417">
       <split-first>
         <leaf>
           <file leaf-file-name="ISuggestor.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ISuggestor.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="7" column="37" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="49" />
+                  <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -56,24 +55,24 @@
             <entry file="file://$PROJECT_DIR$/src/AutoSuggestor.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+                  <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
                   <folding>
-                    <element signature="e#1181#1182#0" expanded="true" />
-                    <element signature="e#1233#1234#0" expanded="true" />
-                    <element signature="e#1305#1306#0" expanded="true" />
-                    <element signature="e#1357#1358#0" expanded="true" />
-                    <element signature="e#1430#1431#0" expanded="true" />
-                    <element signature="e#1482#1483#0" expanded="true" />
-                    <element signature="e#7769#7770#0" expanded="true" />
-                    <element signature="e#7894#7895#0" expanded="true" />
-                    <element signature="e#9587#9588#0" expanded="true" />
-                    <element signature="e#9635#9636#0" expanded="true" />
-                    <element signature="e#9671#9672#0" expanded="true" />
-                    <element signature="e#9703#9704#0" expanded="true" />
-                    <element signature="e#9743#9744#0" expanded="true" />
-                    <element signature="e#9775#9776#0" expanded="true" />
-                    <element signature="e#9823#9824#0" expanded="true" />
-                    <element signature="e#9859#9860#0" expanded="true" />
+                    <element signature="e#1182#1183#0" expanded="true" />
+                    <element signature="e#1234#1235#0" expanded="true" />
+                    <element signature="e#1306#1307#0" expanded="true" />
+                    <element signature="e#1358#1359#0" expanded="true" />
+                    <element signature="e#1431#1432#0" expanded="true" />
+                    <element signature="e#1483#1484#0" expanded="true" />
+                    <element signature="e#7770#7771#0" expanded="true" />
+                    <element signature="e#7895#7896#0" expanded="true" />
+                    <element signature="e#9588#9589#0" expanded="true" />
+                    <element signature="e#9636#9637#0" expanded="true" />
+                    <element signature="e#9672#9673#0" expanded="true" />
+                    <element signature="e#9704#9705#0" expanded="true" />
+                    <element signature="e#9744#9745#0" expanded="true" />
+                    <element signature="e#9776#9777#0" expanded="true" />
+                    <element signature="e#9824#9825#0" expanded="true" />
+                    <element signature="e#9860#9861#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -83,7 +82,7 @@
             <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+                  <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -92,21 +91,8 @@
           <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.43041608">
-                  <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.024390243">
+                  <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -122,7 +108,19 @@
             <entry file="file://$PROJECT_DIR$/src/AutoSuggestorMVC.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+                  <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -133,8 +131,8 @@
           <file leaf-file-name="ExampleClass.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5121951">
-                  <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.63414633">
+                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -169,15 +167,15 @@
         <option value="$PROJECT_DIR$/src/SuggestorController.java" />
         <option value="$PROJECT_DIR$/src/Suggestable.java" />
         <option value="$PROJECT_DIR$/src/SuggestorView.java" />
-        <option value="$PROJECT_DIR$/src/AutoSuggestorMVC.java" />
         <option value="$PROJECT_DIR$/src/TFIDFmodel.java" />
-        <option value="$PROJECT_DIR$/src/SuggestionLabel.java" />
+        <option value="$PROJECT_DIR$/src/WordModel.java" />
+        <option value="$PROJECT_DIR$/src/WordModelAndController.java" />
         <option value="$PROJECT_DIR$/src/ISuggestor.java" />
         <option value="$PROJECT_DIR$/src/AutoSuggestor.java" />
-        <option value="$PROJECT_DIR$/src/WordModel.java" />
-        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
-        <option value="$PROJECT_DIR$/src/WordModelAndController.java" />
+        <option value="$PROJECT_DIR$/src/SuggestionLabel.java" />
         <option value="$PROJECT_DIR$/src/TFIDFModelAndController.java" />
+        <option value="$PROJECT_DIR$/src/AutoSuggestorMVC.java" />
+        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
       </list>
     </option>
   </component>
@@ -578,22 +576,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="367" column="0" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -621,7 +619,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -652,7 +649,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -681,22 +677,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="435" column="89" selection-start-line="435" selection-start-column="89" selection-end-line="435" selection-end-column="89" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -716,7 +712,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -745,22 +740,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="435" column="89" selection-start-line="435" selection-start-column="89" selection-end-line="435" selection-end-column="89" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -780,7 +775,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -809,22 +803,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="435" column="89" selection-start-line="435" selection-start-column="89" selection-end-line="435" selection-end-column="89" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,7 +838,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -883,22 +876,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="38" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="38" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,7 +901,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="404" column="97" selection-start-line="404" selection-start-column="97" selection-end-line="404" selection-end-column="97" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -947,22 +939,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -972,7 +964,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="404" column="97" selection-start-line="404" selection-start-column="97" selection-end-line="404" selection-end-column="97" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -993,7 +984,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="400" column="36" selection-start-line="400" selection-start-column="36" selection-end-line="400" selection-end-column="36" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1014,22 +1004,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1057,7 +1047,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="400" column="36" selection-start-line="400" selection-start-column="36" selection-end-line="400" selection-end-column="36" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1078,22 +1067,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1116,45 +1105,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISuggestor.java">
+    <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AutoSuggestorMVC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ISuggestor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoSuggestor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#7769#7770#0" expanded="true" />
-            <element signature="e#7894#7895#0" expanded="true" />
-            <element signature="e#9587#9588#0" expanded="true" />
-            <element signature="e#9635#9636#0" expanded="true" />
-            <element signature="e#9671#9672#0" expanded="true" />
-            <element signature="e#9703#9704#0" expanded="true" />
-            <element signature="e#9743#9744#0" expanded="true" />
-            <element signature="e#9775#9776#0" expanded="true" />
-            <element signature="e#9823#9824#0" expanded="true" />
-            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#7770#7771#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="e#9672#9673#0" expanded="true" />
+            <element signature="e#9704#9705#0" expanded="true" />
+            <element signature="e#9744#9745#0" expanded="true" />
+            <element signature="e#9776#9777#0" expanded="true" />
+            <element signature="e#9824#9825#0" expanded="true" />
+            <element signature="e#9860#9861#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1162,37 +1151,36 @@
     <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5121951">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43041608">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.024390243">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AutoSuggestorMVC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63414633">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>

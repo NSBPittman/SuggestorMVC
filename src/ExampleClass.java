@@ -2,7 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 /**
- * Created by NickDesktop on 2/21/2016.
+ * Created by Nick Pittman on 2/21/2016.
+ * EXISTS ONLY AS A TEMPLATE TO PLUG INTO LARGER PROJECTS
  */
 public class ExampleClass {
     public static void main(String[] args) {
@@ -14,8 +15,10 @@ public class ExampleClass {
 
         String EKBLocation = "src/resources/lilFakeEKB.csv";
 
-        TFIDFModelAndController theModel = new TFIDFModelAndController(EKBLocation);
-        //WordModelAndController theModel = new WordModelAndController(dictinaryLocation);
+        double minReq = 0.5;
+
+        //TFIDFModelAndController theModel = new TFIDFModelAndController(EKBLocation, minReq);
+        WordModelAndController theModel = new WordModelAndController(dictinaryLocation);
 
         AutoSuggestorMVC.createAutoSuggestor(frame, p, theModel);
 

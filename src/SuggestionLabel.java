@@ -7,7 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Created by Nick on 2/15/2016.
+ * Created by Nick Pittman on 2/15/2016.
  */
 public class SuggestionLabel extends JLabel{
 
@@ -18,12 +18,6 @@ public class SuggestionLabel extends JLabel{
         private Color suggestionsTextColor, suggestionBorderColor;
         private ISuggestor theModel;
 
-        //HERE
-        //TFIDFmodel theModel = new TFIDFmodel();
-        //WordModel theModel = new WordModel();
-
-
-        //view
         public SuggestionLabel(String string, final Color borderColor, Color suggestionsTextColor, AutoSuggestor autoSuggestor, ISuggestor theModel) {
             super(string);
 
@@ -75,24 +69,12 @@ public class SuggestionLabel extends JLabel{
             return focused;
         }
 
-        //view
         private void replaceWithSuggestedText() {
-
-            //Word Suggester
             String suggestedWord = getText();
             String text = textField.getText();
-            String typedWord = autoSuggestor.getCurrentlyTypedWord();//word model bug culprit
-            String t = text.substring(0, text.lastIndexOf(typedWord));
-            //String tmp = t + text.substring(text.lastIndexOf(typedWord)).replace(typedWord, suggestedWord);
-            //String tmp = suggestedWord;
 
-            String tmp = theModel.getSuggested(suggestedWord, text, typedWord, t);
+            String tmp = theModel.getSuggested(suggestedWord, text);
             textField.setText(tmp + " ");
-            //System.out.println("In replaceWithSuggestedText\n suggestedWord = " + suggestedWord + "\n text = " + text + "\n typedWord = " + typedWord + "\n t = " + t + "\n tmp = " + tmp);
-
-            //Hyp Suggester
-//        String hyp = textField.getText();
-//        String
         }
     }
 

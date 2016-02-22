@@ -1,11 +1,10 @@
 /**
- * Created by NickDesktop on 1/19/2016.
+ * Created by Nick Pittman on 1/19/2016.
  */
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import com.aliasi.tokenizer.EnglishStopTokenizerFactory;
 import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
@@ -14,43 +13,29 @@ import com.aliasi.tokenizer.PorterStemmerTokenizerFactory;
 import com.aliasi.tokenizer.Tokenization;
 import com.aliasi.tokenizer.TokenizerFactory;
 
-/**
- * Created by NickDesktop on 11/16/2015.
- */
-//model
+
 public class TFIDFModelAndController implements ISuggestor {
     private String EKBLocation;
     private List<String> documents;
     private List<String> stemDocs;
     private String[] tempDocs;
-    String[] entries;
+    private double minReq;
 
-    public TFIDFModelAndController(String EKBLocation) {
+    public TFIDFModelAndController(String EKBLocation, double minReq) {
         this.EKBLocation = EKBLocation;
-
-//        String doc1 = "Patient has Hyperthyroid";
-//        String doc2 = "Patient has Leukemia";
-//        String doc3 = "Patient has Scleritis";
-//        String doc4 = "Patient has Vitiligo";
-//        String doc5 = "Patient has Sclerosis";
-//        String doc6 = "Patient has Crohn's disease";
-//        String doc7 = "The patient has contracted sclerosis";
-        //String[] tempDocs;
-
+        this.minReq = minReq;
 
         try {
             BufferedReader ugh = new BufferedReader(new FileReader(new File(EKBLocation)));
             BufferedReader br = new BufferedReader(new FileReader(new File(EKBLocation)));
             String line;
             int len = 0;
-            while ((line = ugh.readLine()) != null) {
+            while ((line = ugh.readLine()) != null) {//must be a better way to do this...
                 len++;
-
             }
             int i = 0;
             tempDocs = new String[len];
             while ((line = br.readLine()) != null) {
-                //System.out.println(i + " " + len + " " + line);
                 tempDocs[i] = line;
                 i++;
             }
@@ -67,10 +52,7 @@ public class TFIDFModelAndController implements ISuggestor {
         documents = Arrays.asList(tempDocs);
 
         stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
-
-
     }
-
 
     /**
      * @param doc  list of strings
@@ -94,10 +76,7 @@ public class TFIDFModelAndController implements ISuggestor {
                 }
             }
         }
-        //todo instead of making sure length > 0 throw exception if length is 0
-
         return result / length;
-
     }
 
     /**
@@ -115,8 +94,7 @@ public class TFIDFModelAndController implements ISuggestor {
                     //System.out.println("Word: " + word + "in Doc: " + doc);
                     if (newTerm.equalsIgnoreCase(word)) {
                         n++;
-                        //System.out.println("TERMS: " + n);
-                        break;//todo rewrite code to not use break
+                        break;
                         //use bool to break out of inner for loop
                         //or make inner loop into a function of it's own
                         //break exists so that n is count of how many document term appears in not how many times it appears in all docs
@@ -124,10 +102,8 @@ public class TFIDFModelAndController implements ISuggestor {
                 }
             }
         }
-        //System.out.println("doc size: " + docs.size() + " | n: :" + n + " | idf: " + docs.size() / n);
-        n = n + (Math.random() * .00000000000000000000000000000001);
+        n = n + (Math.random() * .0000000000000000001);
         return Math.abs(Math.log((docs.size() / n)));
-        //return Math.log(docs.size() / n);
     }
 
 
@@ -199,7 +175,7 @@ public class TFIDFModelAndController implements ISuggestor {
 
     private Double docScore(List<String> documents, String cDoc, String hypothesis){
         Double score = 0.0;
-        TFIDFModelAndController calculator = new TFIDFModelAndController(EKBLocation);
+        TFIDFModelAndController calculator = new TFIDFModelAndController(EKBLocation, minReq);
 
         ArrayList<String> hyp = tokenize(hypothesis);
         hyp = stemming(hyp);
@@ -209,7 +185,6 @@ public class TFIDFModelAndController implements ISuggestor {
         return score;
     }
 
-    //oh lord the side effects
     private static void reverse(double[] array) {
         if (array == null) {
             return;
@@ -226,14 +201,11 @@ public class TFIDFModelAndController implements ISuggestor {
         }
     }
 
-    //returns array of requested length provided scores meet basic requirements
-    //hello side effects
-    private static double[] getTopScores(double[] scoreArr, int retLen){
+    private double[] getTopScores(double[] scoreArr, int retLen){
         double[] topArr = new double[retLen];
         for (int i = 0; i < retLen; i++)
-            topArr[i] = -20.20;
+            topArr[i] = -1;
 
-        double minReq = .6;//TO BE MADE GLOBAL//todo make this another config
         Arrays.sort(scoreArr);
         reverse(scoreArr);
         int ifI = 0;
@@ -278,18 +250,17 @@ public class TFIDFModelAndController implements ISuggestor {
                 sortedHyps.add(ekbHyps.get(i));
             }
         }
-        //System.out.println("\nBest EKB hypothesis: " + sortedHyps);
         return sortedHyps;
     }
 
 
-    public ArrayList<String> calculateBestMatches(String userHyp, int numMatches){//be more consistent in naming things
+    public ArrayList<String> calculateBestMatches(String line, int numMatches){//be more consistent in naming things
         ArrayList<String> best;
-        best = getBestMatches(stemDocs, userHyp, documents, numMatches);
+        best = getBestMatches(stemDocs, line, documents, numMatches);
         return best;
     }
 
-    public String getSuggested(String suggestedWord, String text, String typedWord, String t){
+    public String getSuggested(String suggestedWord, String text){
         String newText = suggestedWord;
         return newText;
     }

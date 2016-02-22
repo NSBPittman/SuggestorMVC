@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by NickDesktop on 1/21/2016.
+ * Created by Nick Pittman on 1/21/2016.
  */
 //make window here and make autosuggestor extend textbox so that it
 public class AutoSuggestorMVC {
