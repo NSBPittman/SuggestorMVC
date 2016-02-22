@@ -1,5 +1,6 @@
 /**
  * Created by Nick Pittman on 1/19/2016.
+ * Suggests string/phrase bases on closeness of sent in text to sent in csv file of phrases
  */
 import java.io.*;
 import java.util.Arrays;
@@ -13,7 +14,14 @@ import com.aliasi.tokenizer.PorterStemmerTokenizerFactory;
 import com.aliasi.tokenizer.Tokenization;
 import com.aliasi.tokenizer.TokenizerFactory;
 
-
+/**
+ * TFIDFModelAndController has variabls
+ * EKBLocation a file path to sent in phrase csv file
+ * documents a List of all phrases from csv file
+ * stemDocs a stemmed List of phrases from csv file
+ * tempDocs a String array used to read in csv file
+ * minReq a required score for phrase to have to be considered "good enough" to be returned
+ */
 public class TFIDFModelAndController implements ISuggestor {
     private String EKBLocation;
     private List<String> documents;
@@ -21,6 +29,11 @@ public class TFIDFModelAndController implements ISuggestor {
     private String[] tempDocs;
     private double minReq;
 
+    /**
+     * Constructor, creates documents and stemDocs
+     * @param EKBLocation file path for sent in csv file
+     * @param minReq a required score for phrase to have to be considered "good enough" to be returned
+     */
     public TFIDFModelAndController(String EKBLocation, double minReq) {
         this.EKBLocation = EKBLocation;
         this.minReq = minReq;
@@ -119,6 +132,11 @@ public class TFIDFModelAndController implements ISuggestor {
 
     }
 
+    /**
+     * Tokenizes sent in line
+     * @param line string to be tokenized
+     * @return ArrayList of tokenized line
+     */
     public static ArrayList<String> tokenize(String line) {
         // create a new instance
         TokenizerFactory f1 = IndoEuropeanTokenizerFactory.INSTANCE;
@@ -141,6 +159,11 @@ public class TFIDFModelAndController implements ISuggestor {
         return arrResultToken;
     }
 
+    /**
+     * Stems sent in token ArrayList
+     * @param token sent in ArrayList of tokens to be stemmed
+     * @return ArrayList of stemmed tokens
+     */
     public static ArrayList<String> stemming(ArrayList<String> token) {
         TokenizerFactory f1 = IndoEuropeanTokenizerFactory.INSTANCE;
         TokenizerFactory fPorter = new PorterStemmerTokenizerFactory(f1);
@@ -162,6 +185,11 @@ public class TFIDFModelAndController implements ISuggestor {
         return nString;
     }
 
+    /**
+     * Takes in List of documents, tokenizes, then stems them
+     * @param documents List of phrases to be stemmed
+     * @return tokenized and stemmed documents
+     */
     private static ArrayList<String> makeStemmedDocuments(List<String> documents) {
         ArrayList<String> sDocs = new ArrayList<String>();
         for (String cDoc : documents){
@@ -173,6 +201,13 @@ public class TFIDFModelAndController implements ISuggestor {
         return sDocs;
     }
 
+    /**
+     * Gets score for document/phrase in comparison with entered user text/hypothesis
+     * @param documents List of phrases to be stemmed
+     * @param cDoc Doc to be scored
+     * @param hypothesis User entered phrase, used to score cDoc
+     * @return
+     */
     private Double docScore(List<String> documents, String cDoc, String hypothesis){
         Double score = 0.0;
         TFIDFModelAndController calculator = new TFIDFModelAndController(EKBLocation, minReq);
@@ -201,6 +236,12 @@ public class TFIDFModelAndController implements ISuggestor {
         }
     }
 
+    /**
+     * Calculates best score and returns double array of scores that meet minReq
+     * @param scoreArr double array of scores for the documents/phrases
+     * @param retLen length of array to return
+     * @return double array of scores that meet minReq
+     */
     private double[] getTopScores(double[] scoreArr, int retLen){
         double[] topArr = new double[retLen];
         for (int i = 0; i < retLen; i++)
@@ -226,6 +267,7 @@ public class TFIDFModelAndController implements ISuggestor {
         }
         return contains;
     }
+
 
     private  ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches){
         double[] scoreArr;

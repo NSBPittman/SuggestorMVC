@@ -21,8 +21,9 @@ import javax.swing.event.DocumentListener;
 
 /**
  * Created by Nick Pittman on 1/19/2016.
+ * View for AutoSuggestor
  */
-public class AutoSuggestor {
+public class AutoSuggestorView {
 
     private final JTextField textField;
     private final Window container;
@@ -51,16 +52,23 @@ public class AutoSuggestor {
     private final Color suggestionsTextColor;
     private final Color suggestionFocusedColor;
 
-    //view
-    public AutoSuggestor(JTextField textField, Window mainWindow, ArrayList<String> words, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity, ISuggestor modelIn) {
+    /**
+     * Constructor
+     * @param textField where user enters their ideas
+     * @param mainWindow window that AutoSuggestor occupies, used to size suggestionPanel
+     * @param popUpBackground color for suggestionPanel
+     * @param textColor text color for text in suggestionPanel
+     * @param suggestionFocusedColor color to highlight focused suggestion
+     * @param opacity opacity of suggestionPanel
+     * @param modelIn model to be used to get suggestions
+     */
+    public AutoSuggestorView(JTextField textField, Window mainWindow, Color popUpBackground, Color textColor, Color suggestionFocusedColor, float opacity, ISuggestor modelIn) {
         this.textField = textField;
         this.suggestionsTextColor = textColor;
         this.container = mainWindow;
         this.suggestionFocusedColor = suggestionFocusedColor;
         this.textField.getDocument().addDocumentListener(documentListener);
         theModel = modelIn;
-
-        setDictionary(words);
 
         typedWord = "";
         currentIndexOfSpace = 0;
@@ -78,7 +86,6 @@ public class AutoSuggestor {
     }
 
 
-    //view
     private void addKeyBindingToRequestFocusInPopUpWindow() {
         textField.getInputMap(JComponent.WHEN_FOCUSED).put(KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, 0, true), "Down released");
         textField.getActionMap().put("Down released", new AbstractAction() {
@@ -162,7 +169,7 @@ public class AutoSuggestor {
 
     private void checkForAndShowSuggestions() {
 
-        typedWord = getCurrentlyTypedWord();
+        typedWord = textField.getText();
 
 
         suggestionsPanel.removeAll();//remove previos words/jlabels that were added
@@ -184,20 +191,14 @@ public class AutoSuggestor {
         }
     }
 
-    //view
+    /**
+     * Creates suggestionLabel and adds it to suggestionLabel
+     * @param word string to create suggestionLabel of
+     */
     protected void addWordToSuggestions(String word) {
-        //IMPORTANT
         SuggestionLabel suggestionLabel = new SuggestionLabel(word, suggestionFocusedColor, suggestionsTextColor, this, theModel);
-
         calculatePopUpWindowSize(suggestionLabel);
-
-        //System.out.println("In addWordToSuggestions\n word = " + word);
-
         suggestionsPanel.add(suggestionLabel);
-    }
-
-    public String getCurrentlyTypedWord() {//get newest word after last white spaceif any or the first word if no white spaces
-        return textField.getText();
     }
 
 

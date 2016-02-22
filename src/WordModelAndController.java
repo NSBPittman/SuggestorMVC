@@ -8,12 +8,14 @@ import java.util.ArrayList;
 public class WordModelAndController implements ISuggestor {
     private int currentIndexOfSpace;
     private final ArrayList<String> dictionary = new ArrayList<>();
+    private int numCharacters;
 
     /**
      * Creates dictionary for class to check sent in words
      * @param dictionaryLocation string represents file path of dictionary
      */
-    public WordModelAndController(String dictionaryLocation) {
+    public WordModelAndController(String dictionaryLocation, int numCharacters) {
+        this.numCharacters = numCharacters;
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(dictionaryLocation)));
             String line;
@@ -37,17 +39,17 @@ public class WordModelAndController implements ISuggestor {
         }
     }
 
-    public ArrayList<String> calculateBestMatches(String line, int numMatches){//be more consistent in naming things
+    public ArrayList<String> calculateBestMatches(String line, int numMatches){
 
         ArrayList<String> match = new ArrayList<>();
         String currentlyTypedWord = getCurrentlyTypedWord(line);
         String alreadyTypedWords = getAlreadyTypedWords(line);
 
-        for (String word : dictionary) {//get words in the dictionary which we added
+        for (String word : dictionary) {
             boolean fullymatches = true;
-            if (currentlyTypedWord.length() > 2) { //requires that 3 characters be typed
-                for (int i = 0; i < currentlyTypedWord.length(); i++) {//each string in the word
-                    if (!currentlyTypedWord.toLowerCase().startsWith(String.valueOf(word.toLowerCase().charAt(i)), i)) {//check for match
+            if (currentlyTypedWord.length() > numCharacters) {
+                for (int i = 0; i < currentlyTypedWord.length(); i++) {
+                    if (!currentlyTypedWord.toLowerCase().startsWith(String.valueOf(word.toLowerCase().charAt(i)), i)) {
                         fullymatches = false;
                         break;
                     }
