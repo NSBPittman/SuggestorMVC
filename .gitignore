@@ -1,3 +1,11 @@
+# IntelliJ files not directly related to code
+.idea
+.classpath
+.project
+.settings/
+target/
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
