@@ -24,9 +24,8 @@ import com.aliasi.tokenizer.TokenizerFactory;
  */
 public class TFIDFModelAndController implements ISuggester {
     private String EKBLocation;
-    private List<String> documents;
+    protected List<String> documents;
     private List<String> stemDocs;
-    private String[] tempDocs;
     private double minReq;
 
     /**
@@ -37,21 +36,17 @@ public class TFIDFModelAndController implements ISuggester {
     public TFIDFModelAndController(String EKBLocation, double minReq) {
         this.EKBLocation = EKBLocation;
         this.minReq = minReq;
+        documents = new ArrayList<String>();
 
         try {
             BufferedReader ugh = new BufferedReader(new FileReader(new File(EKBLocation)));
             BufferedReader br = new BufferedReader(new FileReader(new File(EKBLocation)));
+            List<String> itemsToAdd = new ArrayList<String>();
             String line;
-            int len = 0;
-            while ((line = ugh.readLine()) != null) {//must be a better way to do this...
-                len++;
+            while((line = br.readLine()) != null){
+                documents.add(line);
             }
-            int i = 0;
-            tempDocs = new String[len];
-            while ((line = br.readLine()) != null) {
-                tempDocs[i] = line;
-                i++;
-            }
+
         }
         catch(FileNotFoundException exception)
         {
@@ -62,7 +57,7 @@ public class TFIDFModelAndController implements ISuggester {
             System.out.println(exception);
         }
 
-        documents = Arrays.asList(tempDocs);
+        //documents = Arrays.asList(tempDocs);
 
         stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
     }
