@@ -33,33 +33,30 @@ public class TFIDFModelAndController implements ISuggester {
      * @param EKBLocation file path for sent in csv file
      * @param minReq a required score for phrase to have to be considered "good enough" to be returned
      */
-    public TFIDFModelAndController(String EKBLocation, double minReq) {
+    public TFIDFModelAndController(String EKBLocation, double minReq) throws IOException{
         this.EKBLocation = EKBLocation;
         this.minReq = minReq;
         documents = new ArrayList<String>();
+        File ekbFile = null;
+        BufferedReader br = null;
 
         try {
-            BufferedReader ugh = new BufferedReader(new FileReader(new File(EKBLocation)));
-            BufferedReader br = new BufferedReader(new FileReader(new File(EKBLocation)));
+            ekbFile = new File(EKBLocation);
+            if (!ekbFile.exists()) {//file  not found
+                throw new FileNotFoundException("Could not find file: " + EKBLocation);
+            }
+            br = new BufferedReader(new FileReader(ekbFile));
+
             List<String> itemsToAdd = new ArrayList<String>();
             String line;
-            while((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 documents.add(line);
             }
 
+        } finally {
+            br.close();
+            stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
         }
-        catch(FileNotFoundException exception)
-        {
-            System.out.println("The file " + EKBLocation + " was not found.");
-        }
-        catch(IOException exception)
-        {
-            System.out.println(exception);
-        }
-
-        //documents = Arrays.asList(tempDocs);
-
-        stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
     }
 
     /**
@@ -203,16 +200,20 @@ public class TFIDFModelAndController implements ISuggester {
      * @param hypothesis User entered phrase, used to score cDoc
      * @return
      */
-    private Double docScore(List<String> documents, String cDoc, String hypothesis){
+    private Double docScore(List<String> documents, String cDoc, String hypothesis) throws IOException{
         Double score = 0.0;
-        TFIDFModelAndController calculator = new TFIDFModelAndController(EKBLocation, minReq);
-
-        ArrayList<String> hyp = tokenize(hypothesis);
-        hyp = stemming(hyp);
-        for (String cHyp : hyp) {
-            score += calculator.tfIdf(cDoc, documents, cHyp);
+        TFIDFModelAndController calculator = null;
+        try {
+            calculator = new TFIDFModelAndController(EKBLocation, minReq);
+            throw new IOException();
+        } finally {
+            ArrayList<String> hyp = tokenize(hypothesis);
+            hyp = stemming(hyp);
+            for (String cHyp : hyp) {
+                score += calculator.tfIdf(cDoc, documents, cHyp);
+            }
+            return score;
         }
-        return score;
     }
 
     private static void reverse(double[] array) {
@@ -272,7 +273,7 @@ public class TFIDFModelAndController implements ISuggester {
      * @param numMatches number of matches to return
      * @return ArrayList<String> of the documents from ekbHyps that exceed minReq
      */
-    private  ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches){
+    private  ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches) throws IOException{
         double[] scoreArr;
         scoreArr = new double[documents.size()];
         double cDocScore;
@@ -299,7 +300,7 @@ public class TFIDFModelAndController implements ISuggester {
     }
 
 
-    public ArrayList<String> calculateBestMatches(String line, int numMatches){//be more consistent in naming things
+    public ArrayList<String> calculateBestMatches(String line, int numMatches) throws IOException{//be more consistent in naming things
         ArrayList<String> best;
         best = getBestMatches(stemDocs, line, documents, numMatches);
         return best;

@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -260,13 +261,18 @@ public class AutoSuggesterView {
     }
 
     boolean wordTyped(String typedWord) {
+        ArrayList<String> res = null;
 
         if (typedWord.isEmpty()) {
             return false;
         }
         boolean suggestionAdded = false;
-
-        ArrayList<String> res = theModel.calculateBestMatches(typedWord, 5);
+        try {
+            res = theModel.calculateBestMatches(typedWord, 5);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
         for (String hyp : res){
             addWordToSuggestions(hyp);
             suggestionAdded = true;
