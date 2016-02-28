@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d795a747-50b0-486d-945f-3a52cc94fd1a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView$1.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView$2.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView$3.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/ExampleClass.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/ExampleClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/ISuggester.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/ISuggester.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\out\production\SuggestorMVC\TFIDFModelAndController.class" afterPath="C:\Users\NickDesktop\Desktop\SENIOR PROJECT\SuggestorMVC\out\production\SuggestorMVC\TFIDFModelAndController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AutoSuggesterView.java" afterPath="$PROJECT_DIR$/src/AutoSuggesterView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExampleClass.java" afterPath="$PROJECT_DIR$/src/ExampleClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ISuggester.java" afterPath="$PROJECT_DIR$/src/ISuggester.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TFIDFModelAndController.java" afterPath="$PROJECT_DIR$/src/TFIDFModelAndController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WordModelAndController.java" afterPath="$PROJECT_DIR$/src/WordModelAndController.java" />
     </list>
     <ignored path="SuggestorMVC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,93 +25,116 @@
     <favorites_list name="SuggestorMVC" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ISuggester.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutoSuggesterView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AutoSuggesterView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="e#1292#1293#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuggestionLabel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutoSuggestorCreator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AutoSuggestorCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExampleClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6743185">
-              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#1920#1928#0" expanded="true" />
-                <element signature="e#6213#6221#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="ISuggester.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AutoSuggesterView.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AutoSuggesterView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1292#1293#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SuggestionLabel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AutoSuggestorCreator.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AutoSuggestorCreator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ExampleClass.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.80487806">
+                  <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1913#1921#0" expanded="true" />
+                    <element signature="e#6205#6213#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="1.2926829">
+                  <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1913#1921#0" expanded="true" />
+                    <element signature="e#6205#6213#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -154,11 +168,11 @@
         <option value="$PROJECT_DIR$/src/ISuggestor.java" />
         <option value="$PROJECT_DIR$/src/SuggestionLabel.java" />
         <option value="$PROJECT_DIR$/src/AutoSuggestorCreator.java" />
-        <option value="$PROJECT_DIR$/src/WordModelAndController.java" />
         <option value="$PROJECT_DIR$/src/ISuggester.java" />
         <option value="$PROJECT_DIR$/src/AutoSuggesterView.java" />
-        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
         <option value="$PROJECT_DIR$/src/TFIDFModelAndController.java" />
+        <option value="$PROJECT_DIR$/src/WordModelAndController.java" />
+        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
       </list>
     </option>
   </component>
@@ -592,8 +606,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,8 +639,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -678,8 +692,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,8 +745,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,8 +798,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -837,8 +851,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -890,8 +904,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -913,8 +927,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -966,8 +980,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1040,16 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoSuggesterView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1060,25 +1064,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
+    <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1913#1921#0" expanded="true" />
+            <element signature="e#6205#6213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
+    <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6743185">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.80487806">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1920#1928#0" expanded="true" />
-            <element signature="e#6213#6221#0" expanded="true" />
           </folding>
         </state>
       </provider>

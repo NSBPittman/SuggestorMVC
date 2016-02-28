@@ -1,3 +1,5 @@
+import com.sun.media.jfxmedia.logging.Logger;
+
 import javax.swing.*;
 import java.io.IOException;
 
@@ -28,12 +30,13 @@ public class ExampleClass {
         ISuggester theModel = null;
 
         try {
-            theModel = new TFIDFModelAndController(EKBLocation, minReq);
-            //theModel = new WordModelAndController(dictinaryLocation, numCharacters);
+            //theModel = new TFIDFModelAndController(EKBLocation, minReq);
+            theModel = new WordModelAndController(dictinaryLocation, numCharacters);
         }
         catch (IOException e){
-            System.out.println(e);
-            e.printStackTrace();
+            //System.out.println(e);
+            //e.printStackTrace();
+            Logger.logMsg(0, e.toString());
         }
 
         AutoSuggestorCreator.createAutoSuggestor(frame, p, theModel);

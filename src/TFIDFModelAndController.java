@@ -37,7 +37,7 @@ public class TFIDFModelAndController implements ISuggester {
         this.EKBLocation = EKBLocation;
         this.minReq = minReq;
         documents = new ArrayList<String>();
-        File ekbFile = null;
+        File ekbFile;
         BufferedReader br = null;
 
         try {
@@ -52,7 +52,6 @@ public class TFIDFModelAndController implements ISuggester {
             while ((line = br.readLine()) != null) {
                 documents.add(line);
             }
-
         } finally {
             br.close();
             stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS

@@ -14,28 +14,27 @@ public class WordModelAndController implements ISuggester {
      * Creates dictionary for class to check sent in words
      * @param dictionaryLocation string represents file path of dictionary
      */
-    public WordModelAndController(String dictionaryLocation, int numCharacters) {
+    public WordModelAndController(String dictionaryLocation, int numCharacters) throws IOException {
         this.numCharacters = numCharacters;
+
+        File dicFile;
+        BufferedReader br = null;
+
         try {
-            BufferedReader br = new BufferedReader(new FileReader(new File(dictionaryLocation)));
+            dicFile = new File(dictionaryLocation);
+            if (!dicFile.exists()) {//file not found
+                throw new FileNotFoundException("Could not find file: " + dictionaryLocation);
+            }
+            br = new BufferedReader(new FileReader(dicFile));
             String line;
             while ((line = br.readLine()) != null) {
-
                 String[] entries = line.split(",");
-
                 for (String word : entries) {
                     dictionary.add(word);
                 }
             }
-        }
-
-        catch(FileNotFoundException exception)
-        {
-            System.out.println("The file " + dictionaryLocation + " was not found.");
-        }
-        catch(IOException exception)
-        {
-            System.out.println(exception);
+        } finally {
+            br.close();
         }
     }
 
