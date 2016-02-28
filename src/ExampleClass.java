@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.io.IOException;
+
 /**
  * Created by Nick Pittman on 2/21/2016.
  * EXISTS ONLY AS A TEMPLATE TO PLUG INTO LARGER PROJECTS
@@ -23,8 +25,16 @@ public class ExampleClass {
         double minReq = 0.5;
         int numCharacters = 3;
 
-        TFIDFModelAndController theModel = new TFIDFModelAndController(EKBLocation, minReq);
-        //WordModelAndController theModel = new WordModelAndController(dictinaryLocation, numCharacters);
+        ISuggester theModel = null;
+
+        try {
+            theModel = new TFIDFModelAndController(EKBLocation, minReq);
+            //theModel = new WordModelAndController(dictinaryLocation, numCharacters);
+        }
+        catch (IOException e){
+            System.out.println(e);
+            e.printStackTrace();
+        }
 
         AutoSuggestorCreator.createAutoSuggestor(frame, p, theModel);
 
