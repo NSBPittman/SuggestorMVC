@@ -7,8 +7,8 @@ import java.util.List;
  * Suggests word from sent in dictionary based on what is partially finished word is sent in
  */
 public class WordModelAndController implements ISuggester {
-    private int currentIndexOfSpace;
     protected List<String> dictionary;
+    private int currentIndexOfSpace;
     private int numCharacters;
 
     /**
@@ -38,6 +38,7 @@ public class WordModelAndController implements ISuggester {
      * @throws IOException
      */
     public List<String> readInDictionary(String dicLocation) throws IOException{
+        dictionary = new ArrayList<String>();
         File dicFile;
         BufferedReader br = null;
 
@@ -47,6 +48,7 @@ public class WordModelAndController implements ISuggester {
                 throw new FileNotFoundException("Could not find file: " + dicLocation);
             }
             br = new BufferedReader(new FileReader(dicFile));
+
             String line;
             while ((line = br.readLine()) != null) {
                 String[] entries = line.split(",");
@@ -76,7 +78,7 @@ public class WordModelAndController implements ISuggester {
                     }
                 }
                 if (fullymatches) {
-                    match.add(alreadyTypedWords + word);
+                    //match.add(alreadyTypedWords + word);
                     return match;
                 }
             }
