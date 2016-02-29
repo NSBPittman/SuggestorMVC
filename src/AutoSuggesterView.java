@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.List;
 import java.util.ArrayList;
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -261,7 +262,7 @@ public class AutoSuggesterView {
     }
 
     boolean wordTyped(String typedWord) {
-        ArrayList<String> res = null;
+        List<String> res = null;
 
         if (typedWord.isEmpty()) {
             return false;

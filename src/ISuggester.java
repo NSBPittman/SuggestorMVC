@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Nick Pittman on 1/21/2016.
@@ -11,7 +11,7 @@ public interface ISuggester {
      * @param numMatches number of matches to be returned
      * @return An ArrayList of the closest matches
      */
-    public ArrayList<String> calculateBestMatches(String line, int numMatches) throws IOException;
+    public List<String> calculateBestMatches(String line, int numMatches) throws IOException;
 
     /**
      * Assembles a new sentence with the selected suggestion

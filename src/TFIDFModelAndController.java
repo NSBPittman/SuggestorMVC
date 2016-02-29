@@ -15,7 +15,7 @@ import com.aliasi.tokenizer.Tokenization;
 import com.aliasi.tokenizer.TokenizerFactory;
 
 /**
- * TFIDFModelAndController has variabls
+ * TFIDFModelAndController is the model and controller for a TFIDF recommendation system
  * EKBLocation a file path to sent in phrase csv file
  * documents a List of all phrases from csv file
  * stemDocs a stemmed List of phrases from csv file
@@ -23,39 +23,60 @@ import com.aliasi.tokenizer.TokenizerFactory;
  * minReq a required score for phrase to have to be considered "good enough" to be returned
  */
 public class TFIDFModelAndController implements ISuggester {
-    private String EKBLocation;
     protected List<String> documents;
     private List<String> stemDocs;
     private double minReq;
 
     /**
-     * Constructor, creates documents and stemDocs
-     * @param EKBLocation file path for sent in csv file
+     * Constructor,
+     * @param EKBLocation a string for the filepath of EKB file
      * @param minReq a required score for phrase to have to be considered "good enough" to be returned
+     * @throws IOException
      */
     public TFIDFModelAndController(String EKBLocation, double minReq) throws IOException{
-        this.EKBLocation = EKBLocation;
         this.minReq = minReq;
+        this.documents = readInEKB(EKBLocation);
+        this.stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
+    }
+
+    /**
+     * Constructor, creates documents and stemDocs
+     * @param ekb a list of strings for the ekb hypotheses
+     * @param minReq a required score for phrase to have to be considered "good enough" to be returned
+     * @throws IOException
+     */
+    public TFIDFModelAndController(List<String> ekb, double minReq) {
+        this.documents = ekb;
+        this.minReq = minReq;
+        this.stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
+    }
+
+    /**
+     * creates List<String> from passed in file
+     * @param fileLocation string for the filePath
+     * @return List<String> representation of the read in file
+     * @throws IOException
+     */
+    public List<String> readInEKB(String fileLocation) throws IOException{
         documents = new ArrayList<String>();
         File ekbFile;
         BufferedReader br = null;
 
         try {
-            ekbFile = new File(EKBLocation);
+            ekbFile = new File(fileLocation);
             if (!ekbFile.exists()) {//file  not found
-                throw new FileNotFoundException("Could not find file: " + EKBLocation);
+                throw new FileNotFoundException("Could not find file: " + fileLocation);
             }
             br = new BufferedReader(new FileReader(ekbFile));
 
-            List<String> itemsToAdd = new ArrayList<String>();
             String line;
             while ((line = br.readLine()) != null) {
                 documents.add(line);
             }
         } finally {
             br.close();
-            stemDocs = makeStemmedDocuments(documents);//TAKE DOCUMENTS AND RETURN TOKENIZED AND STEMMED DOCUMENTS
         }
+        return documents;
     }
 
     /**
@@ -128,7 +149,7 @@ public class TFIDFModelAndController implements ISuggester {
      * @param line string to be tokenized
      * @return ArrayList of tokenized line
      */
-    public static ArrayList<String> tokenize(String line) {
+    public static List<String> tokenize(String line) {
         // create a new instance
         TokenizerFactory f1 = IndoEuropeanTokenizerFactory.INSTANCE;
         // create new object for lowercase tokenizing
@@ -143,7 +164,7 @@ public class TFIDFModelAndController implements ISuggester {
         // get whole tokens result
         String[] result = tk.tokens();
         // store to arraylist, it is optional, you could resurn String[] also.
-        ArrayList<String> arrResultToken = new ArrayList<String>();
+        List<String> arrResultToken = new ArrayList<String>();
         for (int i = 0; i < result.length; i++) {
             arrResultToken.add(result[i]);
         }
@@ -155,10 +176,10 @@ public class TFIDFModelAndController implements ISuggester {
      * @param token sent in ArrayList of tokens to be stemmed
      * @return ArrayList of stemmed tokens
      */
-    public static ArrayList<String> stemming(ArrayList<String> token) {
+    public static List<String> stemming(List<String> token) {
         TokenizerFactory f1 = IndoEuropeanTokenizerFactory.INSTANCE;
         TokenizerFactory fPorter = new PorterStemmerTokenizerFactory(f1);
-        ArrayList<String> arrResultStem = new ArrayList<String>();
+        List<String> arrResultStem = new ArrayList<String>();
         for (int i = 0; i < token.size(); i++) {
             Tokenization tk1 = new Tokenization(token.get(i), fPorter);
             String[] rs = tk1.tokens();
@@ -167,7 +188,7 @@ public class TFIDFModelAndController implements ISuggester {
         return arrResultStem;
     }
 
-    private static String stringBuilder (ArrayList<String> arrList) {
+    private static String stringBuilder (List<String> arrList) {
         String nString = "";
         for (String value : arrList) {
             nString = nString + " " + value;
@@ -181,11 +202,11 @@ public class TFIDFModelAndController implements ISuggester {
      * @param documents List of phrases to be stemmed
      * @return tokenized and stemmed documents
      */
-    private static ArrayList<String> makeStemmedDocuments(List<String> documents) {
-        ArrayList<String> sDocs = new ArrayList<String>();
+    private static List<String> makeStemmedDocuments(List<String> documents) {
+        List<String> sDocs = new ArrayList<String>();
         for (String cDoc : documents){
-            ArrayList<String> tDoc = tokenize(cDoc);
-            ArrayList<String> sDoc = stemming(tDoc);
+            List<String> tDoc = tokenize(cDoc);
+            List<String> sDoc = stemming(tDoc);
             String stemDoc = stringBuilder(sDoc);
             sDocs.add(stemDoc);
         }
@@ -203,10 +224,10 @@ public class TFIDFModelAndController implements ISuggester {
         Double score = 0.0;
         TFIDFModelAndController calculator = null;
         try {
-            calculator = new TFIDFModelAndController(EKBLocation, minReq);
+            calculator = new TFIDFModelAndController(documents, minReq);
             throw new IOException();
         } finally {
-            ArrayList<String> hyp = tokenize(hypothesis);
+            List<String> hyp = tokenize(hypothesis);
             hyp = stemming(hyp);
             for (String cHyp : hyp) {
                 score += calculator.tfIdf(cDoc, documents, cHyp);
@@ -272,7 +293,7 @@ public class TFIDFModelAndController implements ISuggester {
      * @param numMatches number of matches to return
      * @return ArrayList<String> of the documents from ekbHyps that exceed minReq
      */
-    private  ArrayList<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches) throws IOException{
+    private  List<String> getBestMatches (List<String> documents, String hypothesis, List<String> ekbHyps, int numMatches) throws IOException{
         double[] scoreArr;
         scoreArr = new double[documents.size()];
         double cDocScore;
@@ -299,8 +320,8 @@ public class TFIDFModelAndController implements ISuggester {
     }
 
 
-    public ArrayList<String> calculateBestMatches(String line, int numMatches) throws IOException{//be more consistent in naming things
-        ArrayList<String> best;
+    public List<String> calculateBestMatches(String line, int numMatches) throws IOException{//be more consistent in naming things
+        List<String> best;
         best = getBestMatches(stemDocs, line, documents, numMatches);
         return best;
     }

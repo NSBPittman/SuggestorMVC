@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Nick Pittman on 1/21/2016.
@@ -7,23 +8,43 @@ import java.util.ArrayList;
  */
 public class WordModelAndController implements ISuggester {
     private int currentIndexOfSpace;
-    private final ArrayList<String> dictionary = new ArrayList<>();
+    protected List<String> dictionary;
     private int numCharacters;
 
     /**
      * Creates dictionary for class to check sent in words
      * @param dictionaryLocation string represents file path of dictionary
+     * @param numCharacters number of characters to be typed before words are suggested
      */
     public WordModelAndController(String dictionaryLocation, int numCharacters) throws IOException {
         this.numCharacters = numCharacters;
+        this.dictionary = readInDictionary(dictionaryLocation);
+    }
 
+    /**
+     * constructor
+     * @param dictionary List<String> for string comparison and suggestion
+     * @param numCharacters number of characters to be typed before words are suggested
+     */
+    public WordModelAndController(List<String> dictionary, int numCharacters) {
+        this.dictionary = dictionary;
+        this.numCharacters = numCharacters;
+    }
+
+    /**
+     * builds List<String> for passed in file location
+     * @param dicLocation filepath to file to be read
+     * @return List<String> of lines from file
+     * @throws IOException
+     */
+    public List<String> readInDictionary(String dicLocation) throws IOException{
         File dicFile;
         BufferedReader br = null;
 
         try {
-            dicFile = new File(dictionaryLocation);
+            dicFile = new File(dicLocation);
             if (!dicFile.exists()) {//file not found
-                throw new FileNotFoundException("Could not find file: " + dictionaryLocation);
+                throw new FileNotFoundException("Could not find file: " + dicLocation);
             }
             br = new BufferedReader(new FileReader(dicFile));
             String line;
@@ -36,6 +57,7 @@ public class WordModelAndController implements ISuggester {
         } finally {
             br.close();
         }
+        return dictionary;
     }
 
     public ArrayList<String> calculateBestMatches(String line, int numMatches){
