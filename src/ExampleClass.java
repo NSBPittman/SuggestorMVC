@@ -1,7 +1,9 @@
 import com.sun.media.jfxmedia.logging.Logger;
 
 import javax.swing.*;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Nick Pittman on 2/21/2016.
@@ -15,6 +17,32 @@ import java.io.IOException;
  *      Calls AutoSuggestorMVC, which creates AutoSuggestor
  */
 public class ExampleClass {
+
+    public static List<String> readInDictionary(String dicLocation) throws IOException {
+        List<String> dictionary = new ArrayList<String>();
+        File dicFile;
+        BufferedReader br = null;
+
+        try {
+            dicFile = new File(dicLocation);
+            if (!dicFile.exists()) {//file not found
+                throw new FileNotFoundException("Could not find file: " + dicLocation);
+            }
+            br = new BufferedReader(new FileReader(dicFile));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] entries = line.split(",");
+                for (String word : entries) {
+                    dictionary.add(word);
+                }
+            }
+        } finally {
+            br.close();
+        }
+        return dictionary;
+    }
+
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,12 +52,17 @@ public class ExampleClass {
 
         String EKBLocation = "src/resources/lilFakeEKB.csv";
 
+
+
         double minReq = 0.5;
         int numCharacters = 3;
 
         ISuggester theModel = null;
 
         try {
+            //List<String> dictionary = readInDictionary(dictinaryLocation);
+            //theModel = new WordModelAndController(dictionary,numCharacters);
+
             //theModel = new TFIDFModelAndController(EKBLocation, minReq);
             theModel = new WordModelAndController(dictinaryLocation, numCharacters);
         }

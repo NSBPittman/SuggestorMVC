@@ -78,7 +78,7 @@ public class WordModelAndController implements ISuggester {
                     }
                 }
                 if (fullymatches) {
-                    //match.add(alreadyTypedWords + word);
+                    match.add(alreadyTypedWords + word);
                     return match;
                 }
             }
