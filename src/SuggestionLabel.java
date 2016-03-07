@@ -18,6 +18,7 @@ public class SuggestionLabel extends JLabel{
     private final AutoSuggesterView autoSuggestor;
     private Color suggestionsTextColor, suggestionBorderColor;
     private ISuggester theModel;
+    private String selectedString;
 
     public SuggestionLabel(String string, final Color borderColor, Color suggestionsTextColor, AutoSuggesterView autoSuggestor, ISuggester theModel) {
         super(string);
@@ -27,6 +28,8 @@ public class SuggestionLabel extends JLabel{
         this.suggestionBorderColor = borderColor;
         this.autoSuggestionsPopUpWindow = autoSuggestor.getAutoSuggestionPopUpWindow();
         this.theModel = theModel;
+        this.selectedString = string;
+        //System.out.println("In SuggestionLabel constructor: " + string);
         initComponent();
     }
 
@@ -73,10 +76,12 @@ public class SuggestionLabel extends JLabel{
      *Replaces string in textField with suggested string
      */
     private void replaceWithSuggestedText() {
-        String suggestedWord = getText();
-        String text = textField.getText();
-        String tmp = theModel.getSuggested(suggestedWord, text);
-        textField.setText(tmp + " ");
+//        String suggestedWord = getText();
+//        String text = textField.getText();
+//        String tmp = theModel.getSuggested(suggestedWord, text);
+//        textField.setText(tmp + " ");
+        //System.out.println("replace: " + selectedString);
+        textField.setText(selectedString);
     }
 }
 

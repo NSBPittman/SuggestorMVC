@@ -326,8 +326,8 @@ public class TFIDFModelAndController implements ISuggester {
         return best;
     }
 
-    public String getSuggested(String suggestedWord, String text){
-        String newText = suggestedWord;
-        return newText;
-    }
+//    public String getSuggested(String suggestedWord, String text){
+//        String newText = suggestedWord;
+//        return newText;
+//    }
 }

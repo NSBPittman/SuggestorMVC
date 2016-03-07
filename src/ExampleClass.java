@@ -63,8 +63,8 @@ public class ExampleClass {
             //List<String> dictionary = readInDictionary(dictinaryLocation);
             //theModel = new WordModelAndController(dictionary,numCharacters);
 
-            //theModel = new TFIDFModelAndController(EKBLocation, minReq);
-            theModel = new WordModelAndController(dictinaryLocation, numCharacters);
+            theModel = new TFIDFModelAndController(EKBLocation, minReq);
+            //theModel = new WordModelAndController(dictinaryLocation, numCharacters);
         }
         catch (IOException e){
             //System.out.println(e);

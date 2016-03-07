@@ -19,6 +19,6 @@ public interface ISuggester {
      * @param text string of what the user has entered
      * @return string that is full sentence based on what has been entered and what has been suggested
      */
-    public String getSuggested(String suggestedWord, String text);
+    //public String getSuggested(String suggestedWord, String text);
 
 }

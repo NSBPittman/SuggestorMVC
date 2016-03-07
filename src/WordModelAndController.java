@@ -86,10 +86,10 @@ public class WordModelAndController implements ISuggester {
         return match;
     }
 
-    public String getSuggested(String suggestedWord, String text){
-        String newText = text.substring(text.lastIndexOf(text)).replace(text, suggestedWord);
-        return newText;
-    }
+//    public String getSuggested(String suggestedWord, String text){
+//        String newText = text.substring(text.lastIndexOf(text)).replace(text, suggestedWord);
+//        return newText;
+//    }
 
     /**
      * finds the word that is currently being typed, separates it from preceding words

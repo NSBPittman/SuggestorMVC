@@ -198,6 +198,7 @@ public class AutoSuggesterView {
      * @param word string to create suggestionLabel of
      */
     protected void addWordToSuggestions(String word) {
+        //System.out.println("Make Suggestion Label of: " + word);
         SuggestionLabel suggestionLabel = new SuggestionLabel(word, suggestionFocusedColor, suggestionsTextColor, this, theModel);
         calculatePopUpWindowSize(suggestionLabel);
         suggestionsPanel.add(suggestionLabel);
