@@ -1,29 +1,37 @@
 import com.aliasi.spell.JaccardDistance;
 import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
 import com.aliasi.tokenizer.TokenizerFactory;
+import com.aliasi.spell.FixedWeightEditDistance;
+import com.aliasi.util.Distance;
+import com.aliasi.spell.JaroWinklerDistance;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpellCheckJaccard implements ISuggester {
+public class SpellChecker implements ISuggester {
     protected List<String> dictionary;
     private int numCharacters;
-    private JaccardDistance jaccard;
+//    private JaccardDistance jaccard;
+    private JaroWinklerDistance jaroWinkler;
 
-    public SpellCheckJaccard(String dictionaryLocation, int numCharacters) throws IOException {
+
+    public SpellChecker(String dictionaryLocation, int numCharacters) throws IOException {
         this.dictionary = readInDictionary(dictionaryLocation);
         this.numCharacters = numCharacters;
-        TokenizerFactory tokenizerFactory = IndoEuropeanTokenizerFactory.INSTANCE;
-        this.jaccard = new JaccardDistance(tokenizerFactory);
+//        TokenizerFactory tokenizerFactory = IndoEuropeanTokenizerFactory.INSTANCE;
+//        this.jaccard = new JaccardDistance(tokenizerFactory);
+        this.jaroWinkler = JaroWinklerDistance.JARO_WINKLER_DISTANCE;
 
     }
 
-    public SpellCheckJaccard(List<String> dictionary, int numCharacters){
+    public SpellChecker(List<String> dictionary, int numCharacters){
         this.dictionary = dictionary;
         this.numCharacters = numCharacters;
-        TokenizerFactory tokenizerFactory = IndoEuropeanTokenizerFactory.INSTANCE;
-        this.jaccard = new JaccardDistance(tokenizerFactory);
+//        TokenizerFactory tokenizerFactory = IndoEuropeanTokenizerFactory.INSTANCE;
+//        this.jaccard = new JaccardDistance(tokenizerFactory);
+        this.jaroWinkler = JaroWinklerDistance.JARO_WINKLER_DISTANCE;
+
     }
 
     /**
@@ -58,50 +66,56 @@ public class SpellCheckJaccard implements ISuggester {
     }
 
     private String lowestDistance(String wordIn){
-        double lowestDistance = .5;
+        double lowestDistance = .100;
         String currentSuggestion = wordIn;
         for (String dicWord : dictionary){
-            double cDistance = jaccard.distance(dicWord, wordIn);
+            float cDistance = (float)jaroWinkler.distance(dicWord, wordIn);
             if (cDistance < lowestDistance) {
                 lowestDistance = cDistance;
                 currentSuggestion = dicWord;
-                System.out.println("lowestDistance: " + lowestDistance + "\tcurrentSuggestion: " + currentSuggestion);
+                //System.out.println("lowestDistance: " + lowestDistance + "\tcurrentSuggestion: " + currentSuggestion);
             }
         }
         return currentSuggestion;
     }
 
-    private void jaccardTest(String wordIn){
-        for (String dicWord : dictionary) {
-            System.out.println(dicWord + ": " +jaccard.distance(dicWord, wordIn));
-        }
-        System.out.println("\n");
-    }
+//    private void jaccardTest(String wordIn){
+//        for (String dicWord : dictionary) {
+//            System.out.println(dicWord + ": " +jaccard.distance(dicWord, wordIn));
+//        }
+//        System.out.println("\n");
+//    }
 
     private String suggestWord(String wordIn) {
         String suggestedWord = wordIn;
         for (String dicWord : dictionary) {
             //System.out.println("suggestWord: dicWord: "+ dicWord + " wordIn: " + wordIn);
             if (dicWord.equals(wordIn)) {
-                System.out.println("FULL MATCH");
+                //System.out.println("FULL MATCH");
                 return suggestedWord;
             }
             else {
-                System.out.println("NOT FULL MATCH: calling lowestDistance");
+                //System.out.println("NOT FULL MATCH: calling lowestDistance");
                 suggestedWord = lowestDistance(wordIn);
             }
         }
         return suggestedWord;
     }
 
+//    private void jaroTest(){
+//        JaroWinklerDistance jaroWinkler = JaroWinklerDistance.JARO_WINKLER_DISTANCE;
+//        System.out.println(jaroWinkler.distance("cancer", "cacner"));
+//
+//    }
+
 
     public ArrayList<String> calculateBestMatches(String phrase, int numMatches){
         ArrayList<String> matches = new ArrayList<>();
         String[] wordsInPhrase = phrase.split("\\s+");
+        //jaroTest();
 
         for (String word : wordsInPhrase){
-            //System.out.println(suggestWord(word));
-            jaccardTest(word);
+            System.out.println(suggestWord(word));
 
         }
         return matches;
