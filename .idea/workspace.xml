@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d795a747-50b0-486d-945f-3a52cc94fd1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dictionary.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SpellCheckerModelAndController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/AutoSuggesterView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/ExampleClass.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/ExampleClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/ISuggester.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/ISuggester.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$1.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$2.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SuggestionLabel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/TFIDFModelAndController.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/TFIDFModelAndController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/WordModelAndController.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/WordModelAndController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AutoSuggesterView.java" afterPath="$PROJECT_DIR$/src/AutoSuggesterView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SpellCheckJaccard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SpellCheckerModelAndController.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SpellCheckerModelAndController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExampleClass.java" afterPath="$PROJECT_DIR$/src/ExampleClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SuggestionLabel.java" afterPath="$PROJECT_DIR$/src/SuggestionLabel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuggestorMVC.iml" afterPath="$PROJECT_DIR$/SuggestorMVC.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SuggestorMVC.iws" />
@@ -44,7 +33,7 @@
             <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="93" />
+                  <caret line="13" column="56" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -74,11 +63,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.22364673">
+                  <caret line="70" column="11" selection-start-line="70" selection-start-column="8" selection-end-line="85" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -86,11 +75,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ExampleClass.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ExampleClass.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7207602">
-                  <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="62" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -102,9 +91,10 @@
             <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+                  <caret line="322" column="51" selection-start-line="322" selection-start-column="45" selection-end-line="322" selection-end-column="51" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -136,11 +126,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpellCheckerModelAndController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SpellCheckerModelAndController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SpellCheckerModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2733918">
-                  <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SpellCheckJaccard.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/SpellCheckJaccard.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.2008547">
+                  <caret line="56" column="47" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="47" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -204,10 +206,11 @@
         <option value="$PROJECT_DIR$/src/WordModelAndController.java" />
         <option value="$PROJECT_DIR$/src/TFIDFModelAndController.java" />
         <option value="$PROJECT_DIR$/src/SuggestionLabel.java" />
-        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
         <option value="$PROJECT_DIR$/src/AutoSuggesterView.java" />
         <option value="$PROJECT_DIR$/src/Dictionary.java" />
         <option value="$PROJECT_DIR$/src/SpellCheckerModelAndController.java" />
+        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
+        <option value="$PROJECT_DIR$/src/SpellCheckJaccard.java" />
       </list>
     </option>
   </component>
@@ -222,10 +225,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1918" />
-    <option name="height" value="1038" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -304,7 +307,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.SpellCheckerModelAndController">
+  <component name="RunManager" selected="Application.ExampleClass">
     <configuration default="false" name="SuggestorView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="SuggestorView" />
@@ -520,8 +523,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.SpellCheckerModelAndController" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ExampleClass" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ExampleClass" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SpellCheckerModelAndController" />
         <item index="2" class="java.lang.String" itemvalue="Application.AutoSuggestorMVC" />
         <item index="3" class="java.lang.String" itemvalue="Application.SuggestorView" />
       </list>
@@ -541,7 +544,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1038" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -552,10 +555,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2335845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22914466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13091482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -616,14 +619,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoSuggestorCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1020,34 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AutoSuggestorCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoSuggesterView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1071,6 +1038,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpellCheckerModelAndController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1081,10 +1058,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
+    <entry file="file://$PROJECT_DIR$/src/AutoSuggestorCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SuggestionLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1093,18 +1088,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7207602">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpellCheckerModelAndController.java">
+    <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2733918">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.22364673">
+          <caret line="70" column="11" selection-start-line="70" selection-start-column="8" selection-end-line="85" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpellCheckJaccard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2008547">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
