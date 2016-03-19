@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d795a747-50b0-486d-945f-3a52cc94fd1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SpellCheckJaccard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuggestorMVC/SpellCheckerModelAndController.class" afterPath="$PROJECT_DIR$/out/production/SuggestorMVC/SpellCheckerModelAndController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExampleClass.java" afterPath="$PROJECT_DIR$/src/ExampleClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SpellCheckJaccard.java" afterPath="$PROJECT_DIR$/src/SpellCheckJaccard.java" />
     </list>
     <ignored path="SuggestorMVC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,10 +60,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="WordModelAndController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.22364673">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="70" column="11" selection-start-line="70" selection-start-column="8" selection-end-line="85" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -87,10 +84,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state vertical-scroll-proportion="1.226333">
                   <caret line="322" column="51" selection-start-line="322" selection-start-column="45" selection-end-line="322" selection-end-column="51" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -114,18 +111,6 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="TFIDFModelAndController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="SpellCheckerModelAndController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SpellCheckerModelAndController.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -141,8 +126,8 @@
           <file leaf-file-name="SpellCheckJaccard.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/SpellCheckJaccard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2008547">
-                  <caret line="56" column="47" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="47" />
+                <state vertical-scroll-proportion="0.297062">
+                  <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -555,7 +540,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22914466" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.87961984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -635,6 +620,7 @@
           <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -665,6 +651,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,6 +700,7 @@
           <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -761,6 +749,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,6 +798,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,6 +847,7 @@
           <caret line="404" column="97" selection-start-line="404" selection-start-column="97" selection-end-line="404" selection-end-column="97" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -905,6 +896,7 @@
           <caret line="404" column="97" selection-start-line="404" selection-start-column="97" selection-end-line="404" selection-end-column="97" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -925,6 +917,7 @@
           <caret line="400" column="36" selection-start-line="400" selection-start-column="36" selection-end-line="400" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,6 +966,7 @@
           <caret line="400" column="36" selection-start-line="400" selection-start-column="36" selection-end-line="400" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1048,16 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoSuggestorCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1076,16 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1098,7 +1072,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22364673">
+        <state vertical-scroll-proportion="0.0">
           <caret line="70" column="11" selection-start-line="70" selection-start-column="8" selection-end-line="85" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1106,10 +1080,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ISuggester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TFIDFModelAndController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.226333">
+          <caret line="322" column="51" selection-start-line="322" selection-start-column="45" selection-end-line="322" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SpellCheckJaccard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2008547">
-          <caret line="56" column="47" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.297062">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

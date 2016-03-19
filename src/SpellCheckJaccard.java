@@ -9,15 +9,21 @@ import java.util.List;
 public class SpellCheckJaccard implements ISuggester {
     protected List<String> dictionary;
     private int numCharacters;
+    private JaccardDistance jaccard;
 
     public SpellCheckJaccard(String dictionaryLocation, int numCharacters) throws IOException {
         this.dictionary = readInDictionary(dictionaryLocation);
         this.numCharacters = numCharacters;
+        TokenizerFactory tokenizerFactory = IndoEuropeanTokenizerFactory.INSTANCE;
+        this.jaccard = new JaccardDistance(tokenizerFactory);
+
     }
 
     public SpellCheckJaccard(List<String> dictionary, int numCharacters){
         this.dictionary = dictionary;
         this.numCharacters = numCharacters;
+        TokenizerFactory tokenizerFactory = IndoEuropeanTokenizerFactory.INSTANCE;
+        this.jaccard = new JaccardDistance(tokenizerFactory);
     }
 
     /**
@@ -51,33 +57,51 @@ public class SpellCheckJaccard implements ISuggester {
         return dictionary;
     }
 
-    private String suggestWord(String wordIn){
-        for (String word : dictionary) {
-            boolean fullymatches = true;
-            if (wordIn.length() > numCharacters) {
-                for (int i = 0; i < wordIn.length(); i++) {
-                    if (!wordIn.toLowerCase().startsWith(String.valueOf(word.toLowerCase().charAt(i)), i)) {
-                        fullymatches = false;
-                        break;
-                    }
-                }
-                if (fullymatches) {
-                    System.out.println("Case fullmatches");
-                    return word;
-                }
+    private String lowestDistance(String wordIn){
+        double lowestDistance = .5;
+        String currentSuggestion = wordIn;
+        for (String dicWord : dictionary){
+            double cDistance = jaccard.distance(dicWord, wordIn);
+            if (cDistance < lowestDistance) {
+                lowestDistance = cDistance;
+                currentSuggestion = dicWord;
+                System.out.println("lowestDistance: " + lowestDistance + "\tcurrentSuggestion: " + currentSuggestion);
             }
         }
-        System.out.println("Case not full matches");
-        return wordIn;
+        return currentSuggestion;
     }
+
+    private void jaccardTest(String wordIn){
+        for (String dicWord : dictionary) {
+            System.out.println(dicWord + ": " +jaccard.distance(dicWord, wordIn));
+        }
+        System.out.println("\n");
+    }
+
+    private String suggestWord(String wordIn) {
+        String suggestedWord = wordIn;
+        for (String dicWord : dictionary) {
+            //System.out.println("suggestWord: dicWord: "+ dicWord + " wordIn: " + wordIn);
+            if (dicWord.equals(wordIn)) {
+                System.out.println("FULL MATCH");
+                return suggestedWord;
+            }
+            else {
+                System.out.println("NOT FULL MATCH: calling lowestDistance");
+                suggestedWord = lowestDistance(wordIn);
+            }
+        }
+        return suggestedWord;
+    }
+
 
     public ArrayList<String> calculateBestMatches(String phrase, int numMatches){
         ArrayList<String> matches = new ArrayList<>();
         String[] wordsInPhrase = phrase.split("\\s+");
 
         for (String word : wordsInPhrase){
-            //System.out.println(word);
-            System.out.println(suggestWord(word));
+            //System.out.println(suggestWord(word));
+            jaccardTest(word);
 
         }
         return matches;
