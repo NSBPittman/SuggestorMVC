@@ -23,7 +23,8 @@ import javax.swing.event.DocumentListener;
 
 /**
  * Created by Nick Pittman on 1/19/2016.
- * View for AutoSuggestor
+ * AutoSuggesterView creates the view for AutoSuggester
+ * It creates dropdown suggester panel for passed in model
  */
 public class AutoSuggesterView {
 
@@ -87,7 +88,9 @@ public class AutoSuggesterView {
         addKeyBindingToRequestFocusInPopUpWindow();
     }
 
-
+    /**
+     * Adds action listener for down arrow key
+     */
     private void addKeyBindingToRequestFocusInPopUpWindow() {
         textField.getInputMap(JComponent.WHEN_FOCUSED).put(KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, 0, true), "Down released");
         textField.getActionMap().put("Down released", new AbstractAction() {
@@ -112,7 +115,7 @@ public class AutoSuggesterView {
             @Override
             public void actionPerformed(ActionEvent ae) {//allows scrolling of labels in pop window (I know very hacky for now :))
 
-                ArrayList<SuggestionLabel> sls = getAddedSuggestionLabels();
+                List<SuggestionLabel> sls = getAddedSuggestionLabels();
                 int max = sls.size();
 
                 if (max > 1) {//more than 1 suggestion
@@ -157,8 +160,12 @@ public class AutoSuggesterView {
         textField.requestFocusInWindow();
     }
 
-    public ArrayList<SuggestionLabel> getAddedSuggestionLabels() {
-        ArrayList<SuggestionLabel> sls = new ArrayList<>();
+    /**
+     * get's suggestion from panel
+     * @return List of SuggestionLabel's
+     */
+    public List<SuggestionLabel> getAddedSuggestionLabels() {
+        List<SuggestionLabel> sls = new ArrayList<>();
         for (int i = 0; i < suggestionsPanel.getComponentCount(); i++) {
             if (suggestionsPanel.getComponent(i) instanceof SuggestionLabel) {
                 SuggestionLabel sl = (SuggestionLabel) suggestionsPanel.getComponent(i);
@@ -170,11 +177,9 @@ public class AutoSuggesterView {
     }
 
     private void checkForAndShowSuggestions() {
-
         typedWord = textField.getText();
 
-
-        suggestionsPanel.removeAll();//remove previos words/jlabels that were added
+        suggestionsPanel.removeAll();//remove previous words/jlabels that were added
 
         //used to calcualte size of JWindow as new Jlabels are added
         tW = 0;

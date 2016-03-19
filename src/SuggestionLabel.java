@@ -9,6 +9,8 @@ import java.awt.event.MouseEvent;
 /**
  * Created by Nick Pittman on 2/15/2016.
  * creates SuggestionLabels
+ * Suggestion Labels are an extension of JLabel
+ * Contains Suggested String, and adds ability for the Label to be highlighted and selected
  */
 public class SuggestionLabel extends JLabel{
 
@@ -20,6 +22,13 @@ public class SuggestionLabel extends JLabel{
     private ISuggester theModel;
     private String selectedString;
 
+    /**
+     * Constructor for SuggestionLabel
+     * @param string string for contents of SuggestionLabel
+     * @param borderColor color to outline label in when it is focused
+     * @param suggestionsTextColor color of text for SuggestionLabel
+     * @param autoSuggestor AutoSuggester, used for getTextField and getAutoSuggestionPopUpWindow
+     */
     public SuggestionLabel(String string, final Color borderColor, Color suggestionsTextColor, AutoSuggesterView autoSuggestor, ISuggester theModel) {
         super(string);
         this.suggestionsTextColor = suggestionsTextColor;
@@ -27,12 +36,15 @@ public class SuggestionLabel extends JLabel{
         this.textField = autoSuggestor.getTextField();
         this.suggestionBorderColor = borderColor;
         this.autoSuggestionsPopUpWindow = autoSuggestor.getAutoSuggestionPopUpWindow();
-        this.theModel = theModel;
+        //this.theModel = theModel;
         this.selectedString = string;
         //System.out.println("In SuggestionLabel constructor: " + string);
         initComponent();
     }
 
+    /**
+     * Adds listeners for mouse click selection and enter button selection
+     */
     private void initComponent() {
         setFocusable(true);
         setForeground(suggestionsTextColor);
@@ -58,6 +70,10 @@ public class SuggestionLabel extends JLabel{
         });
     }
 
+    /**
+     * Changes style of SuggestionLabel if it's focused
+     * @param focused boolean for if SuggestionLabel is focused
+     */
     public void setFocused(boolean focused) {
         if (focused) {
             setBorder(new LineBorder(suggestionBorderColor));
@@ -73,7 +89,7 @@ public class SuggestionLabel extends JLabel{
     }
 
     /**
-     *Replaces string in textField with suggested string
+     * Replaces string in textbox with the selectedString
      */
     private void replaceWithSuggestedText() {
 //        String suggestedWord = getText();
