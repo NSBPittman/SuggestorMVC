@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d795a747-50b0-486d-945f-3a52cc94fd1a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WordModelAndControllerLingPipe.java" afterPath="$PROJECT_DIR$/src/WordModelAndControllerLingPipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExampleClass.java" afterPath="$PROJECT_DIR$/src/ExampleClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SpellChecker.java" afterPath="$PROJECT_DIR$/src/SpellChecker.java" />
     </list>
     <ignored path="SuggestorMVC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,8 +77,8 @@
           <file leaf-file-name="ExampleClass.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.71900827">
-                  <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.55509645">
+                  <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -123,10 +124,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WordModelAndControllerLingPipe.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="WordModelAndControllerLingPipe.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/WordModelAndControllerLingPipe.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.56887054">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -135,12 +136,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpellChecker.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SpellChecker.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/SpellChecker.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="5" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                  <folding />
+                <state vertical-scroll-proportion="0.8595041">
+                  <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -205,9 +208,9 @@
         <option value="$PROJECT_DIR$/src/Dictionary.java" />
         <option value="$PROJECT_DIR$/src/SpellCheckerModelAndController.java" />
         <option value="$PROJECT_DIR$/src/SpellCheckJaccard.java" />
-        <option value="$PROJECT_DIR$/src/SpellChecker.java" />
-        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
         <option value="$PROJECT_DIR$/src/WordModelAndControllerLingPipe.java" />
+        <option value="$PROJECT_DIR$/src/ExampleClass.java" />
+        <option value="$PROJECT_DIR$/src/SpellChecker.java" />
       </list>
     </option>
   </component>
@@ -1083,14 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpellChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SpellCheckerModelAndController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1101,20 +1096,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
+    <entry file="file://$PROJECT_DIR$/src/WordModelAndControllerLingPipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71900827">
-          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordModelAndControllerLingPipe.java">
+    <entry file="file://$PROJECT_DIR$/src/ExampleClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.56887054">
-          <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.55509645">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpellChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8595041">
+          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

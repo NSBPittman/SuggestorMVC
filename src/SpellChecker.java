@@ -110,15 +110,18 @@ public class SpellChecker implements ISuggester {
 
 
     public ArrayList<String> calculateBestMatches(String phrase, int numMatches){
-        ArrayList<String> matches = new ArrayList<>();
+        ArrayList<String> match = new ArrayList<>();
         String[] wordsInPhrase = phrase.split("\\s+");
         //jaroTest();
 
+        String correctedPhrase = "";
         for (String word : wordsInPhrase){
-            System.out.println(suggestWord(word));
-
+            correctedPhrase = correctedPhrase + " " + suggestWord(word);
+            correctedPhrase = correctedPhrase.trim();
+            System.out.println(correctedPhrase);
+            match.add(correctedPhrase);
         }
-        return matches;
+        return match;
     }
 }
 

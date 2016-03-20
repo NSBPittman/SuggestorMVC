@@ -65,8 +65,8 @@ public class ExampleClass {
 
             //theModel = new TFIDFModelAndController(EKBLocation, minReq);
             //theModel = new WordModelAndController(dictinaryLocation, numCharacters);
-            //theModel = new SpellChecker(dictinaryLocation, numCharacters);
-            theModel = new WordModelAndControllerLingPipe(dictinaryLocation, numCharacters);
+            theModel = new SpellChecker(dictinaryLocation, numCharacters);
+            //theModel = new WordModelAndControllerLingPipe(dictinaryLocation, numCharacters);
         }
         catch (IOException e){
             //System.out.println(e);
