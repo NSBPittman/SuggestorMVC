@@ -1,5 +1,5 @@
 import com.aliasi.spell.JaroWinklerDistance;
-
+import com.aliasi.util.Distance;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -84,24 +84,29 @@ public class WordModelAndControllerLingPipe implements ISuggester {
         return currentSuggestion;
     }
 
+
     public ArrayList<String> calculateBestMatches(String line, int numMatches){
 
         ArrayList<String> match = new ArrayList<>();
+        //System.out.println(line);
         String currentlyTypedWord = getCurrentlyTypedWord(line);
         String alreadyTypedWords = getAlreadyTypedWords(line);
+        //System.out.println("AT: " + alreadyTypedWords + " | CT: " + currentlyTypedWord);
+
 
         for (String word : dictionary) {
             //boolean fullymatches = true;
-            if (currentlyTypedWord.length() > numCharacters) {
-                if (word.equals(alreadyTypedWords)) {
-                    //System.out.println("FULL MATCH");
-                    match.add(alreadyTypedWords + word);
-                }
-                else {
-                    //System.out.println("NOT FULL MATCH: calling lowestDistance");
-                    String suggestedWord = lowestDistance(alreadyTypedWords);
-                    match.add(alreadyTypedWords + suggestedWord);
-                }
+            if (word.equals(alreadyTypedWords)) {
+                //System.out.println("FULL MATCH");
+                System.out.println("Suggested1: " + alreadyTypedWords + currentlyTypedWord);
+                match.add(alreadyTypedWords + word);
+                break;
+            }
+            else {
+                //System.out.println("NOT FULL MATCH: calling lowestDistance");
+                String suggestedWord = lowestDistance(currentlyTypedWord);
+                match.add(alreadyTypedWords + suggestedWord);
+                break;
             }
         }
         return match;
